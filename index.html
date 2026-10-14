@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SYNARA: Five Elements. One You.</title>
+<meta name="description" content="Golongan darah, MBTI, zodiak, shio, dan suku diracik jadi satu potret diri. Lima sisi, satu cerita, nol ribet.">
+<meta property="og:title" content="SYNARA: Five Elements. One You.">
+<meta property="og:description" content="Golongan darah, MBTI, zodiak, shio, dan suku diracik jadi satu potret diri. Lima sisi, satu cerita, nol ribet.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23151D2E'/%3E%3Ctext x='50' y='71' font-family='Georgia,serif' font-size='62' text-anchor='middle' fill='%23D5C09A'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light dark;
+  --navy: #151D2E;
+  --gold: #D5C09A;
+  --ivory: #F6F2EA;
+  --bg: #F6F2EA;
+  --surface: #FFFDF8;
+  --ink: #151D2E;
+  --muted: #5D687E;
+  --line: #E4DACA;
+  --gold-ink: #7A6438;
+  --focus: #3A4660;
+  --c-darah: #B9837A;
+  --c-mbti: #8E7FB0;
+  --c-zodiak: #B39B6E;
+  --c-shio: #6F9A7E;
+  --c-suku: #69758B;
+  --head: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --display: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151D2E; --surface: #1D2639; --ink: #F6F2EA; --muted: #AEB8CB; --line: #2F3A52; --gold-ink: #D5C09A; --focus: #D5C09A;
+    --c-darah: #E3B9AF; --c-mbti: #C9BCE6; --c-zodiak: #D5C09A; --c-shio: #A9CBB3; --c-suku: #AEB8CB;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #151D2E; --surface: #1D2639; --ink: #F6F2EA; --muted: #AEB8CB; --line: #2F3A52; --gold-ink: #D5C09A; --focus: #D5C09A;
+  --c-darah: #E3B9AF; --c-mbti: #C9BCE6; --c-zodiak: #D5C09A; --c-shio: #A9CBB3; --c-suku: #AEB8CB;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.65; -webkit-text-size-adjust: 100%; }
+.page { max-width: 1120px; margin: 0 auto; padding: 28px 20px 40px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+.hero { background: radial-gradient(ellipse at 88% 0%, rgba(213,192,154,0.2), transparent 55%), var(--navy); color: var(--ivory); padding: calc(40px + env(safe-area-inset-top, 0px)) 20px 40px; border-bottom: 1px solid rgba(213,192,154,0.4); }
+.hero-in { max-width: 1120px; margin: 0 auto; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font-family: var(--display); font-weight: 500; font-size: 0.74rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); }
+.eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--gold); }
+h1 { font-family: var(--head); font-weight: 600; font-size: clamp(3.2rem, 10vw, 5.6rem); line-height: 1; letter-spacing: 0.16em; margin: 0 0 8px; }
+.tagline { font-family: var(--head); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 3.2vw, 1.7rem); color: var(--gold); margin: 0; }
+
+/* steps */
+.steps { display: flex; gap: 6px; list-style: none; padding: 0; margin: 0 0 26px; }
+.steps li { flex: 1; min-width: 0; }
+.step { width: 100%; min-height: 44px; text-align: left; background: none; border: 0; border-top: 3px solid var(--line); padding: 9px 2px 0; font-family: var(--display); font-weight: 500; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); cursor: pointer; }
+.step.done { border-top-color: var(--gold); }
+.step[aria-current="step"] { border-top-color: var(--ink); color: var(--ink); font-weight: 700; }
+.step:disabled { cursor: not-allowed; opacity: 0.55; }
+@media (max-width: 640px) { .step { font-size: 0; min-height: 24px; padding: 0; } }
+
+/* slides */
+.slide { display: none; }
+.slide.on { display: block; animation: slidein 0.28s ease-out; }
+@keyframes slidein { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .slide.on { animation: none; } }
+
+.nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; position: sticky; bottom: 0; padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(to top, var(--bg) 72%, transparent); }
+.btn { font-family: var(--display); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; min-height: 46px; padding: 8px 24px; border-radius: 999px; border: 1.5px solid var(--ink); background: var(--ink); color: var(--bg); cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px 8px; box-shadow: 0 1px 0 rgba(21,29,46,0.03), 0 12px 32px -20px rgba(21,29,46,0.25); }
+.formgrid { display: grid; gap: 0 40px; }
+@media (min-width: 760px) { .formgrid { grid-template-columns: 1fr 1fr; } .formgrid .wide { grid-column: 1 / -1; } }
+fieldset { border: 0; margin: 0 0 26px; padding: 0; min-width: 0; }
+legend { font-family: var(--display); font-weight: 600; font-size: 1rem; padding: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+legend .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
+.hint { font-size: 0.875rem; color: var(--muted); margin: 8px 0 0; line-height: 1.5; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--display); font-weight: 500; font-size: 0.95rem; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; min-height: 44px; padding: 6px 14px; cursor: pointer; }
+.chip:hover { border-color: var(--c); }
+.chip[aria-pressed="true"] { border-color: var(--c); box-shadow: inset 0 0 0 1px var(--c); background: var(--surface); background: color-mix(in srgb, var(--c) 20%, var(--surface)); font-weight: 600; }
+.chip.big { min-width: 64px; font-size: 1.15rem; font-weight: 700; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.pair .chip { text-align: left; display: flex; align-items: baseline; gap: 8px; }
+.pair .chip b { font-size: 1.2rem; font-weight: 700; }
+.pair .chip span { font-size: 0.85rem; color: var(--muted); }
+.readout { font-family: var(--display); font-weight: 700; font-size: 1.6rem; letter-spacing: 0.12em; margin: 12px 0 0; }
+.readout small { font-family: var(--display); font-weight: 400; letter-spacing: 0; font-size: 0.9rem; color: var(--muted); margin-left: 8px; }
+select, input[type="number"], input[type="date"], input[type="text"] { font-family: var(--display); font-size: 1rem; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; min-height: 44px; padding: 6px 12px; width: 100%; }
+select:focus, input:focus { border-color: var(--c); }
+.contact { display: grid; gap: 12px; }
+@media (min-width: 760px) { .contact { grid-template-columns: 1fr 1fr; gap: 0 40px; } }
+.contact label { display: grid; gap: 6px; font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+.contact input[aria-invalid="true"] { border-color: var(--c-darah); }
+#contactHint.err { color: var(--c-darah); }
+#tgl { max-width: 320px; }
+#mbti { max-width: 560px; }
+.derived { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.derived .d { min-width: 140px; padding: 8px 14px 10px; border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 4px 4px 12px 12px; background: var(--surface); }
+.derived small { display: block; font-family: var(--display); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.derived b { font-family: var(--display); font-weight: 600; font-size: 1.25rem; }
+
+/* results */
+h2.sec { font-family: var(--head); font-weight: 600; font-size: 2.4rem; letter-spacing: 0; line-height: 1.1; margin: 0 0 10px; }
+h2.sec:focus { outline: none; }
+.sec-intro { margin: 0 0 16px; max-width: 62ch; }
+.sub { font-family: var(--head); font-weight: 600; font-size: 1.6rem; letter-spacing: 0; margin: 28px 0 12px; }
+.profile-line { font-family: var(--display); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--muted); margin: 0 0 4px; }
+.block { max-width: 720px; margin: 26px 0 0; }
+.block .sub { margin: 0 0 12px; }
+.pts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pts li { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--c); border-radius: 4px 14px 14px 4px; padding: 12px 16px 13px; }
+.pts .src { font-family: var(--display); font-size: 0.8rem; color: var(--muted); }
+.pts .khas { display: block; margin-top: 6px; font-size: 0.92rem; color: var(--muted); }
+.pts .khas em { font-style: normal; font-weight: 600; color: var(--ink); }
+.dp { margin: 0 0 10px; max-width: 70ch; }
+.dh { font-family: var(--display); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-ink); margin: 18px 0 8px; }
+.block .dh:first-of-type { margin-top: 0; }
+.pts b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin-bottom: 4px; }
+.rate { background: var(--navy); color: var(--ivory); border: 1px solid rgba(213,192,154,0.4); border-radius: 18px; padding: 24px 22px; max-width: 720px; margin: 30px 0 0; }
+.rate .kicker { color: var(--gold); }
+.rate h3 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.2; margin: 0 0 14px; }
+.opts { display: grid; gap: 8px; margin: 0 0 16px; }
+.opt { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 10px 16px; border: 1px solid rgba(213,192,154,0.35); border-radius: 12px; cursor: pointer; }
+.opt input { accent-color: #D5C09A; width: 18px; height: 18px; margin: 0; flex: none; }
+.opt:has(input:checked) { border-color: var(--gold); background: rgba(213,192,154,0.14); }
+.rate .btn { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.rate .status { margin: 10px 0 0; font-size: 0.9rem; color: rgba(246,242,234,0.82); }
+.kicker { font-family: var(--display); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-ink); margin: 0 0 6px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* share */
+.sharegrid { display: grid; gap: 28px; align-items: start; }
+@media (min-width: 900px) { .sharegrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; } }
+.swatches { display: flex; flex-wrap: wrap; gap: 14px; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: 0; padding: 4px; font-family: var(--display); font-size: 0.82rem; color: var(--ink); cursor: pointer; }
+.swatch .sw { width: 52px; height: 52px; border-radius: 14px; background: var(--g); border: 2px solid var(--line); }
+.swatch[aria-pressed="true"] .sw { border-color: var(--ink); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink); }
+.swatch[aria-pressed="true"] { font-weight: 700; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 10px; }
+.hint.lead { margin: -4px 0 12px; }
+.dlblock { margin: 4px 0 10px; padding-top: 22px; border-top: 1px solid var(--line); }
+.dl-title { font-family: var(--head); font-weight: 600; font-size: 1.6rem; line-height: 1.2; margin: 0 0 14px; }
+.dl-list { display: grid; gap: 10px; }
+.dl-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; width: 100%; text-align: left; padding: 13px 20px; border-radius: 16px; border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font: inherit; }
+.dl-btn:hover { border-color: var(--ink); }
+.dl-btn.main { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.dl-btn .t { font-family: var(--display); font-weight: 600; font-size: 0.98rem; }
+.dl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.toast { font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+.preview { display: flex; justify-content: center; }
+.preview canvas { display: block; width: auto; height: auto; max-width: 100%; max-height: 74vh; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
+@media (min-width: 900px) { .preview { position: sticky; top: 16px; } }
+
+/* halaman PDF (A4, 794 x 1123 px), dirender di luar layar */
+.pdf-root { position: absolute; left: -10000px; top: 0; width: 794px; }
+.pdf-page { position: relative; width: 794px; height: 1123px; overflow: hidden; padding: 56px 56px 0; margin-bottom: 24px;
+  --bg: #F6F2EA; --surface: #FFFDF8; --ink: #151D2E; --muted: #5D687E; --line: #E4DACA; --gold-ink: #7A6438;
+  --c-darah: #B9837A; --c-mbti: #8E7FB0; --c-zodiak: #B39B6E; --c-shio: #6F9A7E; --c-suku: #69758B;
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.6; }
+.pdf-head { background: var(--navy); color: var(--ivory); margin: -56px -56px 26px; padding: 42px 56px 32px; border-bottom: 2px solid var(--gold); }
+.pdf-brand { font-family: var(--head); font-weight: 600; font-size: 46px; line-height: 1; letter-spacing: 0.18em; margin: 0; }
+.pdf-tag { font-family: var(--head); font-style: italic; font-size: 20px; color: var(--gold); margin: 6px 0 20px; }
+.pdf-for { font-family: var(--head); font-weight: 600; font-size: 28px; margin: 0 0 4px; }
+.pdf-meta { font-size: 13px; color: rgba(246,242,234,0.78); margin: 0; }
+.pdf-page .hint { margin: 0 0 6px; }
+.pdf-page .pdf-sec { margin-top: 22px; }
+.pdf-page .pdf-sec .sub { margin: 0 0 12px; }
+.pdf-page ul.pts { margin: 0 0 10px; }
+.pdf-page .pts li { max-width: none; }
+.pdf-page .dh { margin: 4px 0 8px; }
+.pdf-foot { position: absolute; left: 56px; right: 56px; bottom: 22px; display: flex; justify-content: space-between;
+  padding-top: 10px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+.pdf-foot b { font-family: var(--head); font-weight: 600; letter-spacing: 0.2em; color: var(--gold-ink); }
+.site-foot { background: var(--navy); color: rgba(246,242,234,0.78); padding: 30px 20px calc(30px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid rgba(213,192,154,0.4); font-size: 0.92rem; }
+.foot-in { max-width: 1120px; margin: 0 auto; }
+.foot-brand { font-family: var(--head); font-weight: 600; font-size: 1.3rem; letter-spacing: 0.2em; color: var(--gold); margin: 0 0 6px; }
+.site-foot p { margin: 0; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">Five Elements. One You.</p>
+    <h1>SYNARA</h1>
+    <p class="tagline">Discover the patterns within.</p>
+  </div>
+</header>
+
+<div class="page">
+  <ol class="steps" id="steps" aria-label="Langkah"></ol>
+
+  <main>
+    <section class="slide" id="s0" aria-label="Before We Begin">
+      <form class="panel" id="contactForm" novalidate>
+        <h2 class="sec" tabindex="-1">Drop Your Name</h2>
+        <div class="contact">
+          <input type="text" id="nama" autocomplete="name" placeholder="Your nickname" aria-label="Your nickname" required>
+        </div>
+        <p class="hint" id="contactHint" role="alert" style="margin-bottom: 22px"></p>
+      </form>
+    </section>
+
+    <section class="slide" id="s1" aria-label="The Character Build">
+      <form class="panel" id="form" onsubmit="return false" autocomplete="off">
+        <div class="formgrid">
+          <fieldset style="--c: var(--c-darah)">
+            <legend><span class="dot"></span>Blood Type</legend>
+            <div class="chips" id="darah"></div>
+          </fieldset>
+
+          <fieldset style="--c: var(--c-zodiak)">
+            <legend><span class="dot"></span><label for="tgl">Date of Birth</label></legend>
+            <input type="date" id="tgl" min="1900-01-01" max="2100-12-31">
+            <div class="derived" id="birthOut" aria-live="polite"></div>
+          </fieldset>
+
+          <fieldset class="wide" style="--c: var(--c-mbti)">
+            <legend><span class="dot"></span>MBTI Type</legend>
+            <div id="mbti"></div>
+            <p class="readout" id="mbtiOut" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="wide" style="--c: var(--c-suku)">
+            <legend><span class="dot"></span>Ethnic Background</legend>
+            <div class="chips" id="suku"></div>
+            <p class="hint" id="sukuHint">Mixed heritage? You can select up to 3.</p>
+          </fieldset>
+        </div>
+        <p class="hint" style="margin: 12px 0 18px"><button type="button" class="btn ghost" id="reset">Clear All</button></p>
+      </form>
+    </section>
+
+    <section class="slide" id="s2" aria-label="The Lore Unlocked"></section>
+    <section class="slide" id="s3" aria-label="Does This Check Out?"></section>
+
+    <section class="slide" id="s4" aria-label="Your Final Form">
+      <h2 class="sec" tabindex="-1">Your Final Form</h2>
+      <p class="sec-intro">Your lore, all in one card. Customize it and save your vibe.</p>
+      <div class="sharegrid">
+        <div>
+          <fieldset style="--c: var(--focus)">
+            <legend><span class="dot"></span>Set the Vibe</legend>
+            <p class="hint lead">Choose your color palette.</p>
+            <div class="swatches" id="palChips"></div>
+          </fieldset>
+          <fieldset style="--c: var(--focus)">
+            <legend><span class="dot"></span>Keep It or Hide It?</legend>
+            <p class="hint lead">Choose which details stay off your card.</p>
+            <div class="chips" id="hideChips"></div>
+          </fieldset>
+          <fieldset style="--c: var(--focus)">
+            <legend><span class="dot"></span>Pick Your Background</legend>
+            <p class="hint lead">Choose what inspires your card's design.</p>
+            <div class="chips" id="bgChips"></div>
+          </fieldset>
+          <div class="dlblock">
+            <h3 class="dl-title">Take Your Lore With You</h3>
+            <div class="dl-list">
+              <button type="button" class="dl-btn main" id="dl"><span class="t">Download Your Character Card</span></button>
+              <button type="button" class="dl-btn" id="pdf"><span class="t">Download Full Report (PDF)</span></button>
+            </div>
+          </div>
+          <p class="toast" id="toast" role="status"></p>
+        </div>
+        <div class="preview"><canvas id="card" width="1080" height="1920" role="img" aria-label="Pratinjau gambar ringkasan"></canvas></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="nav">
+    <button type="button" class="btn ghost" id="prev">Back</button>
+    <button type="button" class="btn" id="next">Lihat hasil</button>
+  </div>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <p class="foot-brand">SYNARA</p>
+    <p>Santai aja, ini buat seru-seruan dan bahan refleksi diri, bukan tes ilmiah. Setiap orang itu unik, jadi ambil yang terasa pas dan lewati sisanya.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+var MBTI = {
+  INTJ: { },
+  INTP: { },
+  ENTJ: { },
+  ENTP: { },
+  INFJ: { },
+  INFP: { },
+  ENFJ: { },
+  ENFP: { },
+  ISTJ: { },
+  ISFJ: { },
+  ESTJ: { },
+  ESFJ: { },
+  ISTP: { },
+  ISFP: { },
+  ESTP: { },
+  ESFP: { }
+};
+
+var DARAH = {
+  A: { },
+  B: { },
+  AB: { },
+  O: { }
+};
+
+var ZODIAK = [
+  { id: "aries", n: "Aries", tgl: "21 Mar – 19 Apr" },
+  { id: "taurus", n: "Taurus", tgl: "20 Apr – 20 Mei" },
+  { id: "gemini", n: "Gemini", tgl: "21 Mei – 20 Jun" },
+  { id: "cancer", n: "Cancer", tgl: "21 Jun – 22 Jul" },
+  { id: "leo", n: "Leo", tgl: "23 Jul – 22 Agu" },
+  { id: "virgo", n: "Virgo", tgl: "23 Agu – 22 Sep" },
+  { id: "libra", n: "Libra", tgl: "23 Sep – 22 Okt" },
+  { id: "scorpio", n: "Scorpio", tgl: "23 Okt – 21 Nov" },
+  { id: "sagitarius", n: "Sagitarius", tgl: "22 Nov – 21 Des" },
+  { id: "capricorn", n: "Capricorn", tgl: "22 Des – 19 Jan" },
+  { id: "aquarius", n: "Aquarius", tgl: "20 Jan – 18 Feb" },
+  { id: "pisces", n: "Pisces", tgl: "19 Feb – 20 Mar" }
+];
+
+var SHIO = [
+  { id: "tikus", n: "Tikus" },
+  { id: "kerbau", n: "Kerbau" },
+  { id: "macan", n: "Macan" },
+  { id: "kelinci", n: "Kelinci" },
+  { id: "naga", n: "Naga" },
+  { id: "ular", n: "Ular" },
+  { id: "kuda", n: "Kuda" },
+  { id: "kambing", n: "Kambing" },
+  { id: "monyet", n: "Monyet" },
+  { id: "ayam", n: "Ayam" },
+  { id: "anjing", n: "Anjing" },
+  { id: "babi", n: "Babi" }
+];
+
+/* Suku: nama, judul tampilan, dan deskripsinya. */
+var SUKU = [
+  { id: "aceh", n: "Aceh", h: "Aceh", t: ["idealis","setia","pemimpin"],
+    d: "Orang Aceh dikenal menjunjung nilai keislaman, kehormatan, dan keberanian, plus tradisi memuliakan tamu (peumulia jamee). Teguh pada prinsip dan ramah ke tamu. Saking teguhnya, kadang susah diajak kompromi, dan sikap tegasnya bisa terkesan serius buat yang baru kenal." },
+  { id: "alas", n: "Alas", h: "Alas", t: ["setia","harmoni"],
+    d: "Orang Alas tinggal di Aceh Tenggara (Tanah Alas), dengan adat yang kuat dan sistem marga. Dikenal menjaga kekerabatan, ramah, dan suka gotong royong. Kewajiban adat dan keluarga bisa menyita waktu, jadi perlu pintar-pintar menyeimbangkan tradisi dengan perubahan." },
+  { id: "maluku", n: "Ambon", h: "Ambon", t: ["ekspresif","setia","harmoni"],
+    d: "Budaya Ambon kental dengan ikatan persaudaraan antarkampung (pela gandong) dan cinta musik. Orangnya terbuka, hangat, ekspresif, dan setia kawan. Loyalitas yang kuat ke kelompok kadang bikin susah beda pendapat, dan gaya bicara yang lugas bisa disalahpahami." },
+  { id: "amungme", n: "Amungme", h: "Amungme", t: ["harmoni","setia","idealis"],
+    d: "Orang Amungme tinggal di dataran tinggi dan punya ikatan yang sangat dalam dengan tanah dan pegunungan, yang dianggap suci dan bermakna seperti seorang ibu. Dikenal menjunjung kebersamaan, menjaga alam, dan teguh pada adat. Perubahan lingkungan di wilayahnya menuntut penyesuaian, dan beda norma antara kampung dan kota bisa jadi tantangan." },
+  { id: "asmat", n: "Asmat", h: "Asmat", t: ["kreatif","setia"],
+    d: "Orang Asmat hidup dekat dengan hutan dan rawa, dan seni ukir kayunya jadi wujud hormat pada leluhur dan alam. Dikenal kreatif, artistik, dan setia pada komunitas. Jauh dari komunitas bisa terasa berat, dan beda akses antara kampung dan kota menuntut penyesuaian." },
+  { id: "baduy", n: "Baduy", h: "Baduy", t: ["disiplin","idealis","praktis"],
+    d: "Masyarakat Baduy terbagi jadi Baduy Dalam dan Baduy Luar, hidup dengan aturan adat (pikukuh) yang menekankan kesederhanaan, kejujuran, dan menjaga alam. Dikenal sederhana, jujur, dan disiplin merawat lingkungan. Tantangannya ada di tarik-ulur antara menjaga tradisi dan perubahan dari luar, juga saat menyesuaikan diri di luar lingkungan adat." },
+  { id: "bali", n: "Bali", h: "Bali", t: ["harmoni","kreatif"],
+    d: "Orang Bali hidup dengan Tri Hita Karana, yaitu harmoni dengan Tuhan, sesama, dan alam, serta gotong royong (ngayah) yang menyatu dengan seni dan ritual. Cenderung menjaga keselarasan, kreatif, dan artistik. Kewajiban adat dan upacara yang padat bisa menyita waktu, dan rasa sungkan kadang bikin susah menolak permintaan komunitas." },
+  { id: "banjar", n: "Banjar", h: "Banjar", t: ["ambisi","mandiri","harmoni"],
+    d: "Orang Banjar dikenal religius dan punya semangat pantang menyerah, seperti ungkapan haram manyarah waja sampai kaputing. Kebersamaan (kayuh baimbai) dan tradisi merantau juga kuat. Tekadnya yang keras bisa bikin terlalu menekan diri sendiri dan susah berhenti sebelum target tercapai." },
+  { id: "batak", n: "Batak", h: "Batak", t: ["ekspresif","ambisi","setia"],
+    d: "Budaya Batak diatur oleh dalihan na tolu (hula-hula, dongan tubu, boru), dengan marga sebagai identitas yang kuat. Dikenal lugas, berani berpendapat, gigih, dan menghargai pendidikan serta ikatan keluarga. Gaya bicara yang lugas bisa terdengar keras buat yang terbiasa halus, dan tanggung jawab ke keluarga besar kadang terasa berat." },
+  { id: "betawi", n: "Betawi", h: "Betawi", t: ["ekspresif","spontan","harmoni"],
+    d: "Budaya Betawi egaliter, religius, akrab, dan terbuka pada pendatang. Orangnya ramah, humoris, gampang akrab, dan blak-blakan. Gaya santainya bisa disalahpahami di suasana formal, dan sifat spontannya kadang bikin rencana kurang tertata." },
+  { id: "bima", n: "Bima", h: "Bima", t: ["idealis","setia","hatihati"],
+    d: "Orang Bima (Dou Mbojo) dikenal religius dan memegang nilai maja labo dahu (malu berbuat salah dan takut kepada Tuhan). Warisan Kesultanan Bima membentuk adat yang menghargai kehormatan dan sopan santun. Cenderung teguh pada nilai dan menjaga kehormatan keluarga. Tekanan menjaga nama baik bisa terasa berat, dan perubahan zaman menuntut penyesuaian." },
+  { id: "bugis", n: "Bugis", h: "Bugis", t: ["idealis","mandiri","setia"],
+    d: "Orang Bugis berpegang pada siri’ (harga diri), sipakatau (saling memanusiakan), lempu’ (jujur), dan getteng (teguh), plus punya tradisi merantau yang kuat. Dikenal jujur, teguh pendirian, dan menjunjung kehormatan. Urusan harga diri bisa jadi hal yang sangat sensitif, dan sekali berkomitmen, susah mundur." },
+  { id: "buton", n: "Buton", h: "Buton", t: ["idealis","harmoni","disiplin"],
+    d: "Budaya Buton dipengaruhi sejarah Kesultanan Buton, dengan falsafah yang menempatkan agama dan adat di atas kepentingan pribadi. Orangnya santun, menjunjung kehormatan, dan teguh pada nilai. Rasa hormat pada hierarki dan adat kadang bikin sungkan menyampaikan beda pendapat." },
+  { id: "dani", n: "Dani", h: "Dani", t: ["setia","harmoni"],
+    d: "Orang Dani dikenal dengan rumah adat honai dan tradisi bakar batu (barapen) sebagai simbol syukur dan kebersamaan. Kekerabatan dan hormat pada leluhur sangat kuat. Setia kawan, suka gotong royong, dan tangguh menghadapi alam pegunungan. Beda norma antara kampung dan kota, juga jarak dari keluarga besar, bisa jadi tantangan." },
+  { id: "dayak", n: "Dayak", h: "Dayak", t: ["harmoni","setia"],
+    d: "Dayak terdiri dari banyak sub-suku, tapi umumnya menjunjung kebersamaan (rumah betang), hormat pada alam dan leluhur, serta musyawarah. Cenderung suka gotong royong, menjaga alam, dan setia pada komunitas. Perubahan lingkungan hidup menuntut penyesuaian, dan jauh dari komunitas bisa terasa berat." },
+  { id: "flores", n: "Flores", h: "Flores", t: ["harmoni","setia"],
+    d: "Flores punya banyak kelompok etnis (antara lain Manggarai, Ngada, Lio, dan Sikka), jadi “suku Flores” bukan satu kelompok tunggal. Secara umum, masyarakatnya menjunjung kekerabatan, hormat pada leluhur, tradisi tenun ikat, dan kehidupan beragama yang kuat (mayoritas Katolik). Dikenal ramah dan menjaga kebersamaan. Karena adatnya beragam, gambaran ini sangat umum, dan kewajiban adat keluarga besar bisa menyita waktu." },
+  { id: "gayo", n: "Gayo", h: "Gayo", t: ["harmoni","tenang","setia"],
+    d: "Orang Gayo hidup di dataran tinggi Aceh bagian tengah dan dikenal dengan tari saman, nilai keislaman, serta semangat saling menolong (alang tulung). Cenderung santun, menjaga kebersamaan, dan menjunjung rasa malu serta harga diri. Karena terlalu menjaga kesopanan, perasaan kadang malah dipendam, dan menjaga adat di tengah perubahan jadi tantangan tersendiri." },
+  { id: "gorontalo", n: "Gorontalo", h: "Gorontalo", t: ["harmoni","tenang"],
+    d: "Budaya Gorontalo berpegang pada adat yang bersendikan syariat, dan dikenal dengan gotong royong (huyula) serta tutur kata yang halus. Orangnya religius, santun, dan menjaga kebersamaan. Karena terlalu menjaga kesopanan, ketidaksetujuan cenderung dipendam, dan kewajiban adat di acara keluarga bisa menyita waktu." },
+  { id: "jawa", n: "Jawa", h: "Jawa", t: ["harmoni","tenang","empati"],
+    d: "Falsafah rukun, tepa slira (tenggang rasa), dan andhap asor (rendah hati) membentuk gaya hidup yang halus dan menjaga keselarasan. Orang Jawa dikenal santun, sabar, dan peka sama perasaan orang lain. Di sisi lain, sering sungkan menolak atau menyampaikan hal yang nggak enak secara langsung, dan memilih menahan pendapat demi menjaga suasana." },
+  { id: "kubu", n: "Kubu (Anak Dalam)", h: "Kubu (Anak Dalam)", t: ["harmoni","mandiri","setia"],
+    d: "“Kubu” adalah sebutan dari luar. Banyak yang lebih suka disebut Orang Rimba atau Suku Anak Dalam. Hidup sangat dekat dengan hutan, taat aturan adat, dan punya tradisi melangun (berpindah tempat setelah ada kematian). Dikenal menjaga kebersamaan, hormat pada alam, dan mandiri. Hutan yang makin menyusut dan pertemuan dengan kehidupan luar jadi tantangan besar bagi cara hidup mereka." },
+  { id: "kutai", n: "Kutai", h: "Kutai", t: ["harmoni","empati"],
+    d: "Budaya Kutai dipengaruhi sejarah Kesultanan Kutai Kartanegara, dengan tradisi adat keraton dan pesta adat Erau. Orangnya ramah, santun, dan terbuka pada pendatang. Rasa bangga pada sejarah dan adat kadang dibarengi sungkan menyampaikan beda pendapat, plus tantangan menjaga tradisi di tengah perubahan lingkungan sekitar." },
+  { id: "madura", n: "Madura", h: "Madura", t: ["ambisi","setia","disiplin"],
+    d: "Orang Madura dikenal hormat pada orang tua, guru, dan pemimpin, punya etos kerja keras, serta menjaga harga diri. Tangguh, setia, dan setia kawan. Harga diri yang tinggi kadang bikin susah mengalah, dan ada tekanan untuk selalu terlihat kuat." },
+  { id: "makassar", n: "Makassar", h: "Makassar", t: ["ekspresif","setia","pemimpin"],
+    d: "Orang Makassar menjunjung siri’ na pacce, yaitu harga diri yang dibarengi rasa senasib dan solidaritas. Dikenal berani, terus terang, dan setia kawan, dengan tradisi maritim yang kuat. Ekspresinya yang tegas bisa terbaca keras oleh orang lain, dan gampang tersinggung kalau merasa direndahkan." },
+  { id: "manggarai", n: "Manggarai", h: "Manggarai", t: ["harmoni","setia"],
+    d: "Orang Manggarai dikenal dengan sistem tanah komunal (lingko), tarian caci, dan rumah adat seperti mbaru niang. Nilai kebersamaannya tercermin dalam ungkapan gendang one, lingko pe’ang (kampung di dalam, kebun di luar). Mayoritas beragama Katolik dan menjunjung kekerabatan. Dikenal ramah, menjaga kebersamaan, dan hormat pada leluhur. Kewajiban adat dan keluarga besar bisa menyita waktu dan sumber daya." },
+  { id: "melayu", n: "Melayu", h: "Melayu", t: ["harmoni","kreatif","tenang"],
+    d: "Budaya Melayu menekankan budi bahasa, sopan santun, dan adat yang bersendikan nilai agama, juga kuat di tradisi sastra seperti pantun dan syair. Orangnya santun, halus bertutur, dan menghargai seni. Karena terlalu menjaga kehalusan, cenderung menghindari konflik terbuka dan kadang menyampaikan kritik terlalu tersirat." },
+  { id: "mentawai", n: "Mentawai", h: "Mentawai", t: ["harmoni","setia"],
+    d: "Masyarakat Mentawai hidup dengan keyakinan Arat Sabulungan, rumah komunal (uma), dan seni rajah tubuh yang khas, serta menekankan keseimbangan dengan alam dan roh leluhur. Dikenal menjaga harmoni, hormat pada alam, dan kuat dalam kebersamaan. Perubahan dari luar menuntut penyesuaian tanpa kehilangan tradisi." },
+  { id: "minahasa", n: "Minahasa", h: "Minahasa", t: ["ekspresif","harmoni"],
+    d: "Budaya Minahasa menjunjung mapalus (gotong royong), keterbukaan, dan kebersamaan lintas latar, seperti semboyan torang samua basudara dan falsafah sitou timou tumou tou (manusia hidup untuk memanusiakan orang lain). Orangnya terbuka, ramah, dan senang bersosialisasi. Agenda sosial yang padat bisa memotong waktu istirahat, dan rasa sungkan kadang bikin susah menolak ajakan." },
+  { id: "minang", n: "Minangkabau", h: "Minangkabau", t: ["mandiri","analitis"],
+    d: "Budaya Minangkabau berpegang pada adat basandi syarak, syarak basandi Kitabullah, dengan sistem matrilineal, tradisi musyawarah, dan merantau, plus pegangan alam takambang jadi guru. Dikenal mandiri, berani merantau, dan jago berdiskusi. Ada tekanan untuk “berhasil” di rantau, ditambah ekspektasi keluarga dan adat yang bisa terasa berat." },
+  { id: "nias", n: "Nias", h: "Nias", t: ["ambisi","setia"],
+    d: "Orang Nias menyebut diri Ono Niha dan dikenal dengan lompat batu (fahombo), rumah adat omo hada, serta adat yang kuat dengan tingkatan sosial. Dikenal berani, tangguh, dan solider dalam kekerabatan. Hormat pada tingkatan adat dan kehormatan keluarga bisa terasa menekan, dan menyesuaikan diri di luar pulau jadi tantangan." },
+  { id: "osing", n: "Osing", h: "Osing", t: ["ekspresif","idealis","hatihati"],
+    d: "Orang Osing adalah keturunan masyarakat Blambangan dengan bahasa dan budaya yang khas, seperti tari gandrung dan upacara seblang. Dikenal terbuka, egaliter, dan bangga pada budayanya sendiri. Rasa bangga itu bisa dibarengi waspada terhadap pengaruh luar, dan tradisi perlu dijaga supaya nggak tergerus perubahan." },
+  { id: "sasak", n: "Sasak", h: "Sasak", t: ["setia","harmoni"],
+    d: "Orang Sasak dikenal religius dan ramah. Gotong royong (begawe) selalu hadir di acara adat dan keluarga, ditambah tradisi seperti bau nyale. Kekerabatannya kuat, tapi kewajiban adat dan acara keluarga bisa menyita waktu." },
+  { id: "sumba", n: "Sumba", h: "Sumba", t: ["idealis","setia"],
+    d: "Masyarakat Sumba dikenal dengan keyakinan Marapu, rumah adat beratap menjulang, kain tenun ikat, dan tradisi pasola. Kekerabatan, hormat pada leluhur, dan kehormatan keluarga sangat dijunjung. Dikenal teguh pada adat, berani, dan setia pada keluarga besar. Kewajiban adat yang berat bisa menyita biaya dan tenaga." },
+  { id: "sunda", n: "Sunda", h: "Sunda", t: ["harmoni","empati","tenang"],
+    d: "Orang Sunda berpegang pada silih asih, silih asah, silih asuh (saling mengasihi, mengasah, dan mengasuh) serta keramahan (someah). Dikenal ramah, sopan, lembut bertutur, dan suka kebersamaan. Karena terlalu menjaga perasaan, inti pesan kadang nggak tersampaikan, dan cenderung menghindari konfrontasi." },
+  { id: "tengger", n: "Tengger", h: "Tengger", t: ["setia","idealis","harmoni"],
+    d: "Masyarakat Tengger menganut Hindu dengan upacara Yadnya Kasada, dan memegang Panca Setia: setia pada budaya, ucapan, janji, perbuatan, dan teman. Orangnya jujur, menepati ucapan, ramah, dan suka gotong royong. Tantangannya adalah menjaga tradisi di tengah arus wisata dan perubahan." },
+  { id: "toraja", n: "Toraja", h: "Toraja", t: ["setia","harmoni","kreatif"],
+    d: "Orang Toraja dikenal dengan rumah adat tongkonan, hormat pada leluhur, dan upacara adat (termasuk rambu solo’) yang mempererat keluarga besar. Kekerabatannya sangat kuat, suka gotong royong, dan menghargai leluhur serta seni ukir. Upacara adat bisa menyita biaya, waktu, dan tenaga." }
+];
+
+var SHIO_ORDER = ["tikus","kerbau","macan","kelinci","naga","ular","kuda","kambing","monyet","ayam","anjing","babi"];
+
+/* Isi hasil: semua teks dan aturan penyusunannya berasal dari data hasil SYNARA
+   (golongan darah x MBTI x zodiak x shio). */
+var SYNARA_DATA = {
+  order: ["pemimpin", "empati", "analitis", "disiplin", "kreatif", "mandiri", "harmoni", "ambisi", "setia", "hatihati", "ekspresif", "tenang", "idealis", "praktis", "spontan"],
+  labels: {
+    "pemimpin": "kepemimpinan",
+    "empati": "empati",
+    "analitis": "berpikir analitis",
+    "disiplin": "disiplin",
+    "kreatif": "kreativitas",
+    "mandiri": "kemandirian",
+    "harmoni": "menjaga harmoni",
+    "ambisi": "ambisi",
+    "setia": "kesetiaan",
+    "hatihati": "kehati-hatian",
+    "ekspresif": "ekspresif",
+    "tenang": "ketenangan",
+    "idealis": "idealisme",
+    "praktis": "sikap praktis",
+    "spontan": "spontan dan fleksibel"
+  },
+  tags: {
+    darah: {"A": ["disiplin", "hatihati", "harmoni"], "B": ["kreatif", "mandiri", "spontan"], "AB": ["analitis", "mandiri", "hatihati"], "O": ["pemimpin", "ambisi", "praktis"]},
+    mbti: {"INTJ": ["analitis", "mandiri", "ambisi", "disiplin"], "INTP": ["analitis", "kreatif", "mandiri", "spontan"], "ENTJ": ["pemimpin", "ambisi", "disiplin", "analitis"], "ENTP": ["kreatif", "spontan", "ekspresif", "analitis"], "INFJ": ["empati", "idealis", "hatihati", "harmoni"], "INFP": ["empati", "idealis", "kreatif", "tenang"], "ENFJ": ["pemimpin", "empati", "harmoni", "ekspresif"], "ENFP": ["ekspresif", "kreatif", "empati", "spontan"], "ISTJ": ["disiplin", "praktis", "setia", "hatihati"], "ISFJ": ["setia", "empati", "praktis", "harmoni"], "ESTJ": ["pemimpin", "disiplin", "praktis", "ambisi"], "ESFJ": ["harmoni", "setia", "ekspresif", "empati"], "ISTP": ["mandiri", "praktis", "tenang", "spontan"], "ISFP": ["kreatif", "tenang", "spontan", "empati"], "ESTP": ["spontan", "ekspresif", "praktis", "ambisi"], "ESFP": ["ekspresif", "spontan", "empati", "harmoni"]},
+    zodiak: {"Aries": ["pemimpin", "ambisi", "spontan"], "Taurus": ["disiplin", "setia", "praktis"], "Gemini": ["ekspresif", "spontan", "kreatif"], "Cancer": ["empati", "setia", "hatihati", "harmoni"], "Leo": ["pemimpin", "ekspresif", "ambisi"], "Virgo": ["analitis", "disiplin", "hatihati", "praktis"], "Libra": ["harmoni", "kreatif", "empati"], "Scorpio": ["ambisi", "mandiri", "setia"], "Sagitarius": ["spontan", "idealis", "ekspresif"], "Capricorn": ["disiplin", "ambisi", "praktis"], "Aquarius": ["mandiri", "kreatif", "idealis", "analitis"], "Pisces": ["empati", "kreatif", "tenang", "idealis"]},
+    shio: {"Tikus": ["analitis", "praktis", "ekspresif"], "Kerbau": ["disiplin", "setia", "mandiri"], "Macan": ["pemimpin", "ambisi", "spontan"], "Kelinci": ["harmoni", "hatihati", "tenang", "empati"], "Naga": ["pemimpin", "ambisi", "ekspresif"], "Ular": ["analitis", "tenang", "mandiri", "hatihati"], "Kuda": ["spontan", "ekspresif", "mandiri"], "Kambing": ["kreatif", "empati", "tenang", "harmoni"], "Monyet": ["kreatif", "spontan", "analitis"], "Ayam": ["disiplin", "ekspresif", "praktis"], "Anjing": ["setia", "idealis", "hatihati"], "Babi": ["harmoni", "ekspresif", "empati"]}
+  },
+  phrase: {
+    "analitis": "Mikir jernih dan butuh alasan yang masuk akal sebelum memutuskan",
+    "disiplin": "Teratur, konsisten, dan pegang janji",
+    "ambisi": "Punya dorongan kuat untuk mencapai target dan terus naik level",
+    "mandiri": "Nyaman mengandalkan diri sendiri dan nggak gampang terbawa omongan orang",
+    "pemimpin": "Sigap ambil inisiatif dan memimpin saat keadaan menuntut",
+    "spontan": "Fleksibel, cepat menyesuaikan diri, dan siap menyambar peluang yang datang",
+    "harmoni": "Suka suasana adem dan berusaha menjaga hubungan tetap nyaman",
+    "hatihati": "Hati-hati dan menimbang risiko sebelum melangkah",
+    "praktis": "Realistis, lebih memilih hal nyata yang bisa langsung dijalankan",
+    "setia": "Setia dan bisa dipegang omongannya, baik ke orang maupun hal yang diyakini",
+    "ekspresif": "Gampang mengungkapkan isi kepala dan hati, plus jago menghidupkan suasana",
+    "kreatif": "Imajinasinya luas dan cara pandangnya orisinal",
+    "empati": "Peka sama suasana hati orang sekitar dan gampang memahami perasaan mereka",
+    "idealis": "Berpegang pada nilai dan suka membayangkan keadaan yang lebih baik",
+    "tenang": "Tetap kalem dan nggak gampang panik saat suasana memanas"
+  },
+  chal: {
+    "analitis": "• Kebanyakan menimbang sampai overthinking sebelum benar-benar bergerak {src}",
+    "disiplin": "• Kaku sama rencana dan keras ke diri sendiri kalau hasilnya meleset dari target {src}",
+    "ambisi": "• Ngegas kejar target sampai lupa istirahat {src}",
+    "mandiri": "• Gengsi minta tolong, jadi semua dipikul sendiri {src}",
+    "pemimpin": "• Terlalu mendominasi atau gregetan sama orang yang geraknya lebih lambat {src}",
+    "harmoni": "• Menghindari konflik {src} sampai susah bilang \"tidak\" atau menyampaikan rasa nggak nyaman",
+    "hatihati": "• Gampang cemas dan ragu melangkah karena kebanyakan membayangkan risiko {src}",
+    "praktis": "• Kurang sabar sama hal abstrak atau yang hasilnya lama baru kelihatan {src}",
+    "setia": "• Bertahan kelamaan di situasi atau hubungan yang sebenarnya bikin capek {src}",
+    "ekspresif": "• Kadang bereaksi duluan, mikir dampaknya belakangan {src}",
+    "spontan": "• Susah konsisten karena cepat bosan atau gampang ganti arah {src}",
+    "kreatif": "• Idenya banyak, tapi yang kelar bisa dihitung jari {src}",
+    "empati": "• Terlalu banyak menyerap emosi orang lain sampai ikut kelelahan {src}",
+    "idealis": "• Gampang kecewa kalau kenyataan atau orang lain nggak sesuai harapan {src}",
+    "tenang": "• Memendam perasaan sampai terlihat cuek, lalu tiba-tiba menarik diri {src}"
+  },
+  clash: [["spontan", "disiplin", "Sisi spontan dan sisi disiplin bisa tarik-tarikan. Perlu dipilah kapan butuh rencana dan kapan boleh mengalir saja."], ["pemimpin", "harmoni", "Jiwa pemimpin bisa bentrok dengan keinginan menjaga suasana, apalagi saat harus mengambil keputusan yang nggak populer."], ["analitis", "empati", "Logika dan perasaan sama-sama kuat. Saat memutuskan, coba tulis alasan logis dan perasaan secara terpisah, lalu bandingkan."], ["ambisi", "tenang", "Ambisi mendorong terus maju, sementara sisi kalem minta jeda. Masukkan istirahat ke dalam rencana, bukan sisa waktu."], ["ekspresif", "hatihati", "Di satu tempat bisa super ekspresif, di tempat lain super hati-hati, jadi orang bisa membacanya dengan cara berbeda-beda."], ["mandiri", "setia", "Butuh ruang sendiri, tapi juga ingin dekat dengan orang tersayang. Bilang saja kapan sedang butuh ruang."], ["idealis", "praktis", "Idealisme dan sikap praktis bisa adu argumen di dalam kepala. Mulai saja dari langkah kecil yang nyata untuk nilai yang dipegang."]],
+  line2: {
+    "2": "Tema-tema ini muncul di dua elemen, jadi saling menguatkan.",
+    "3": "Ada tema yang muncul di tiga elemen. Lumayan menonjol, nih.",
+    "4": "Ada tema yang muncul di keempat elemen. Ini sih sudah terang benderang."
+  },
+  g: {
+    darah: {"A": "• Golongan darah A: Kata kepercayaan populer (terutama di Jepang), tipe A itu rapi, teliti, dan kalem, cinta banget sama keteraturan, bertanggung jawab, serta enak diajak kerja sama.", "B": "• Golongan darah B: Tipe B dikenal kreatif, mandiri, dan apa adanya, sering jalan sesuai kata hati, fleksibel, jujur tanpa basa-basi, serta semangat total kalau sudah suka.", "AB": "• Golongan darah AB: Tipe AB dianggap unik karena punya \"dua sisi\", bisa logis sekaligus peka tergantung situasinya, gampang menyesuaikan diri, dan pikirannya terbuka.", "O": "• Golongan darah O: Tipe O dikenal pede, tegas, dan fokus ke tujuan, dengan jiwa pemimpin yang kental, optimis, serta tahan banting."},
+    mbti: {"INTJ": "• INTJ: Si perencana strategis yang mandiri dan visioner, jago melihat gambaran besar, menyusun langkah jangka panjang, dan memasang standar kualitas tinggi.", "INTP": "• INTP: Pemikir penasaran yang penuh ide, hobi membongkar konsep sampai ketemu penjelasan paling masuk akal, terbuka sama sudut pandang baru, dan tetap kalem menghadapi masalah rumit.", "ENTJ": "• ENTJ: Tipe tegas dan terorganisir yang suka bikin sistem, berani ambil keputusan, efisien, dan jago menggerakkan orang menuju target.", "ENTP": "• ENTP: Pemikir kilat yang doyan diskusi, menguji ide, dan mencari cara baru, cepat beradaptasi, jago melihat celah, serta energik dan lucu.", "INFJ": "• INFJ: Idealis yang peka dan intuitif, bisa memahami orang sampai ke dalam-dalamnya, punya visi jangka panjang, jadi pendengar yang baik, dan ingin mengerjakan hal yang bermakna.", "INFP": "• INFP: Pribadi reflektif yang tulus dan imajinatif, setia pada nilai pribadi, peka sama perasaan orang, ekspresif lewat karya, dan selalu mencari makna, dari hal remeh sampai hal besar.", "ENFJ": "• ENFJ: Pemimpin yang hangat dan karismatik, jago membaca suasana, komunikatif, gampang dipercaya, dan senang membimbing orang di sekitarnya supaya berkembang.", "ENFP": "• ENFP: Antusias dan kepalanya penuh ide, kreatif, fleksibel, gampang akrab, semangatnya menular, dan pintar menghubungkan orang dengan kemungkinan baru.", "ISTJ": "• ISTJ: Teliti, disiplin, dan bisa diandalkan, kerjanya berpegang pada fakta dan aturan, konsisten, rapi, serta bertanggung jawab penuh.", "ISFJ": "• ISFJ: Penyayang yang setia dan perhatian, memperhatikan kebutuhan orang lain dengan cara yang nyata, teliti, dan bikin suasana terasa aman.", "ESTJ": "• ESTJ: Tegas, praktis, dan terorganisir, menjunjung aturan dan struktur, pemimpin alami, serta bisa diandalkan.", "ESFJ": "• ESFJ: Sosial, hangat, dan suportif, jago kerja sama, setia pada komunitas, dan senang memastikan semua orang merasa diterima dan terurus.", "ISTP": "• ISTP: Pengamat kalem yang praktis dan cekatan, suka paham cara kerja sesuatu lalu langsung turun tangan, tenang saat krisis, dan mandiri.", "ISFP": "• ISFP: Lembut, artistik, dan peka estetika, hidup sesuai nilai pribadi, fleksibel, terbuka, pengertian, dan pintar menikmati momen.", "ESTP": "• ESTP: Gesit dan berani ambil peluang, belajar sambil jalan, jago membaca situasi dan bernegosiasi, energik, serta gampang menyesuaikan diri.", "ESFP": "• ESFP: Ekspresif, spontan, ramah, dan menghibur, peka sama suasana, fleksibel, serta senang berbagi pengalaman."},
+    zodiak: {"Aries": "• Aries (21 Mar – 19 Apr): Berani, energik, dan penuh inisiatif, selalu pengin start duluan, antusias, serta jujur tanpa tedeng aling-aling.", "Taurus": "• Taurus (20 Apr – 20 Mei): Stabil, sabar, dan konsisten, cinta kenyamanan serta kepastian, bisa diandalkan, dan paham mana barang berkualitas.", "Gemini": "• Gemini (21 Mei – 20 Jun): Penasaran, komunikatif, dan jenaka, cepat belajar, serta fleksibel menyesuaikan diri.", "Cancer": "• Cancer (21 Jun – 22 Jul): Penyayang, peduli, dan setia, sangat lekat dengan keluarga serta rasa aman, intuitif, dan siap pasang badan untuk orang tersayang.", "Leo": "• Leo (23 Jul – 22 Agu): Pede, hangat, dan murah hati, karismatik, nyaman tampil, serta berani memimpin di depan.", "Virgo": "• Virgo (23 Agu – 22 Sep): Teliti, detail, dan analitis, gatal kalau ada yang belum beres, serta senang membantu.", "Libra": "• Libra (23 Sep – 22 Okt): Diplomatis, adil, dan peka estetika, selalu mengutamakan keseimbangan, keadilan, dan keindahan.", "Scorpio": "• Scorpio (23 Okt – 21 Nov): Intens, mendalam, gigih, dan fokus, tekun banget pada hal yang dipercaya, setia, serta jago membaca orang.", "Sagitarius": "• Sagitarius (22 Nov – 21 Des): Optimis, jujur, dan bebas, berjiwa petualang, serta haus pengalaman dan ilmu baru.", "Capricorn": "• Capricorn (22 Des – 19 Jan): Disiplin, ambisius, dan realistis, bertanggung jawab, sabar mengejar target, dan membangun sesuatu selangkah demi selangkah.", "Aquarius": "• Aquarius (20 Jan – 18 Feb): Mandiri dan orisinal, pikirannya terbuka, serta peduli pada gagasan, kemanusiaan, dan isu sosial.", "Pisces": "• Pisces (19 Feb – 20 Mar): Lembut, imajinatif, dan penuh empati, kreatif, peka perasaan, serta tulus."},
+    shio: {"Tikus": "• Shio Tikus: Cerdik, adaptif, dan luwes, jago membaca peluang, hemat, cermat mengatur, serta gampang bergaul.", "Kerbau": "• Shio Kerbau: Tekun, jujur, dan konsisten, disiplin, serta bisa diandalkan.", "Macan": "• Shio Macan: Berani, karismatik, dan penuh semangat, senang memimpin, dengan energi yang kayak nggak ada habisnya.", "Kelinci": "• Shio Kelinci: Lembut, santun, dan diplomatis, cinta kedamaian serta keindahan, dan jago menjaga suasana tetap adem.", "Naga": "• Shio Naga: Ambisius, pede, dan pemberani, visioner, karismatik, serta penuh semangat.", "Ular": "• Shio Ular: Tenang, bijak, dan penuh perhitungan, analitis, intuitif, serta fokus ke tujuan.", "Kuda": "• Shio Kuda: Bebas, energik, dan senang bergaul, komunikatif, serta mandiri.", "Kambing": "• Shio Kambing: Lembut, artistik, dan penyayang, kreatif, penuh perhatian, serta cinta suasana damai.", "Monyet": "• Shio Monyet: Cerdas, jenaka, dan banyak akal, cepat belajar, kreatif memecahkan masalah, serta humoris.", "Ayam": "• Shio Ayam: Teliti, rajin, dan terus terang, terorganisir, pede, serta detail.", "Anjing": "• Shio Anjing: Setia, jujur, dan protektif, serta menjunjung keadilan.", "Babi": "• Shio Babi: Murah hati, hangat, dan tulus, pintar menikmati hidup, serta paling semangat kalau kumpul bareng."}
+  },
+  s: {
+    darah: {"A": "• Pasang standar \"cukup baik\" untuk tugas yang nggak terlalu penting. Nggak semua hal perlu nilai 100. (dari darah A)", "B": "• Pakai pengingat untuk janji-janji kecil supaya orang lain tetap merasa dihargai. (dari darah B)", "AB": "• Jelaskan alasan ke orang lain supaya sisi yang berbeda nggak bikin bingung. (dari darah AB)", "O": "• Rayakan keberhasilan tim, bukan cuma pencapaian pribadi. (dari darah O)"},
+    mbti: {"INTJ": "• Minta pendapat orang lain sebelum rencana dikunci mati. (dari INTJ)", "INTP": "• Pasang tenggat kecil supaya ide cepat jadi hasil, bukan cuma jadi wacana. (dari INTP)", "ENTJ": "• Tanya kabar dan perasaan tim dulu sebelum bahas target. (dari ENTJ)", "ENTP": "• Pilih satu ide, tuntaskan, baru lompat ke ide berikutnya. (dari ENTP)", "INFJ": "• Sampaikan kebutuhan secara jelas. Orang lain bukan cenayang. (dari INFJ)", "INFP": "• Pecah tujuan besar jadi langkah kecil yang bisa dikerjakan hari ini. (dari INFP)", "ENFJ": "• Jadwalkan waktu untuk diri sendiri sebelum mengurus kebutuhan orang lain. (dari ENFJ)", "ENFP": "• Pakai satu daftar prioritas dan batasi jumlah proyek yang jalan barengan. (dari ENFP)", "ISTJ": "• Coba satu perubahan kecil di rutinitas tiap bulan. Mulai dari rute pulang juga boleh. (dari ISTJ)", "ISFJ": "• Latih satu kalimat penolakan yang sopan, lalu pakai secara rutin. (dari ISFJ)", "ESTJ": "• Dengarkan sampai selesai sebelum kasih solusi. (dari ESTJ)", "ESFJ": "• Bedakan kritik untuk pekerjaan dengan penolakan terhadap diri sendiri. (dari ESFJ)", "ISTP": "• Ceritakan rencana ke orang terdekat supaya mereka nggak merasa ditinggal. (dari ISTP)", "ISFP": "• Tulis satu target untuk tiga bulan ke depan, lalu cicil pelan-pelan. (dari ISFP)", "ESTP": "• Kasih jeda satu hari sebelum mengambil keputusan besar. (dari ESTP)", "ESFP": "• Pasangkan tugas yang membosankan dengan sesuatu yang disukai. Bekerja sambil ngemil juga sah. (dari ESFP)"},
+    zodiak: {"Aries": "• Tarik napas dulu sebelum membalas saat kesal. (dari Aries)", "Taurus": "• Coba hal baru dalam porsi kecil sebelum memutuskan menolaknya. (dari Taurus)", "Gemini": "• Tuntaskan satu hal dulu sebelum membuka yang baru. (dari Gemini)", "Cancer": "• Ceritakan perasaan lebih awal, sebelum numpuk jadi gunung. (dari Cancer)", "Leo": "• Kasih panggung ke orang lain. Kepemimpinan justru makin kuat karenanya. (dari Leo)", "Virgo": "• Pisahkan mana yang wajib sempurna dan mana yang cukup selesai. (dari Virgo)", "Libra": "• Batasi waktu menimbang. Pilih, lalu jalani. (dari Libra)", "Scorpio": "• Buka sedikit ruang percaya untuk satu orang dulu. (dari Scorpio)", "Sagitarius": "• Pilih kata sedikit lebih hati-hati saat kasih masukan. (dari Sagitarius)", "Capricorn": "• Masukkan waktu istirahat dan main ke jadwal. Itu juga produktif, kok. (dari Capricorn)", "Aquarius": "• Tunjukkan perhatian lewat hal-hal kecil, bukan cuma lewat ide besar. (dari Aquarius)", "Pisces": "• Sediakan waktu sendiri untuk mengisi ulang energi. (dari Pisces)"},
+    shio: {"Tikus": "• Biarkan sebagian keputusan dijalani tanpa kebanyakan hitung-hitungan. (dari Tikus)", "Kerbau": "• Kasih ruang untuk cara kerja yang beda dari cara sendiri. (dari Kerbau)", "Macan": "• Cek ulang risikonya sebelum ambil langkah besar. (dari Macan)", "Kelinci": "• Latih menyampaikan rasa nggak nyaman dengan tenang dan jelas. (dari Kelinci)", "Naga": "• Sisihkan waktu untuk mendengarkan sebelum memutuskan. (dari Naga)", "Ular": "• Bagikan sebagian isi pikiran lebih awal supaya orang lain nggak menebak-nebak. (dari Ular)", "Kuda": "• Selesaikan komitmen yang sedang jalan sebelum mengejar yang baru. (dari Kuda)", "Kambing": "• Ambil satu keputusan kecil tiap hari untuk melatih rasa percaya diri. (dari Kambing)", "Monyet": "• Pilih satu masalah dan tuntaskan sampai beres. (dari Monyet)", "Ayam": "• Awali masukan dengan hal yang sudah berjalan baik. (dari Ayam)", "Anjing": "• Catat hal-hal baik setiap minggu untuk menyeimbangkan rasa cemas. (dari Anjing)", "Babi": "• Cek faktanya dulu sebelum percaya sepenuhnya. (dari Babi)"}
+  },
+  c: {
+    darah: {"A": "• Darah A: maunya serba sempurna, sampai hal kecil pun dipoles terus.", "B": "• Darah B: kadang terkesan cuek, padahal belum tentu nggak peduli.", "AB": "• Darah AB: suka bikin orang lain menebak-nebak.", "O": "• Darah O: kepala batu kalau sudah yakin."},
+    mbti: {"INTJ": "• INTJ: bisa terkesan dingin atau kaku, dan susah melepas tugas ke orang lain maupun menerima masukan.", "INTP": "• INTP: sering menunda eksekusi, dan suka lupa cerita soal perasaan.", "ENTJ": "• ENTJ: gampang terlalu mendominasi, dan gregetan kalau prosesnya lambat.", "ENTP": "• ENTP: cepat bosan setelah fase awal, dan gaya debatnya bisa bikin orang lain kewalahan.", "INFJ": "• INFJ: perfeksionis dan gampang lelah secara emosi, lalu memendam perasaan dan menarik diri.", "INFP": "• INFP: terlalu keras ke diri sendiri, dan susah menghadapi konflik maupun kritik.", "ENFJ": "• ENFJ: terlalu mendahulukan orang lain, dan gampang baper kalau ditolak.", "ENFP": "• ENFP: susah fokus dan konsisten, dan gampang pusing kalau pilihannya kebanyakan.", "ISTJ": "• ISTJ: kurang nyaman dengan perubahan mendadak, dan susah mengungkapkan emosi.", "ISFJ": "• ISFJ: susah bilang \"tidak\", dan keluhannya disimpan kelamaan.", "ESTJ": "• ESTJ: bisa kaku dan terlalu dominan, dan kurang sabar sama hal yang berantakan.", "ESFJ": "• ESFJ: terlalu memikirkan penilaian orang, dan susah menerima kritik.", "ISTP": "• ISTP: susah mengutarakan perasaan, dan cepat bosan dengan rutinitas panjang.", "ISFP": "• ISFP: menghindari konflik, dan kurang suka bikin rencana jangka panjang.", "ESTP": "• ESTP: impulsif, dan kurang sabar sama teori serta hal detail.", "ESFP": "• ESFP: suka menunda hal yang nggak asyik, dan gampang terdistraksi."},
+    zodiak: {"Aries": "• Aries: nggak sabaran.", "Taurus": "• Taurus: keras kepala.", "Gemini": "• Gemini: gampang bosan.", "Cancer": "• Cancer: mood-nya naik turun.", "Leo": "• Leo: gengsinya tinggi.", "Virgo": "• Virgo: terlalu kritis.", "Libra": "• Libra: lama banget kalau harus memutuskan.", "Scorpio": "• Scorpio: susah memaafkan.", "Sagitarius": "• Sagitarius: blak-blakan sampai kadang bikin orang tersinggung.", "Capricorn": "• Capricorn: kelewat serius.", "Aquarius": "• Aquarius: terkesan berjarak.", "Pisces": "• Pisces: gampang ikut menyerap emosi orang lain."},
+    shio: {"Tikus": "• Tikus: gampang khawatir.", "Kerbau": "• Kerbau: kaku.", "Macan": "• Macan: impulsif.", "Kelinci": "• Kelinci: menghindari konflik.", "Naga": "• Naga: dominan.", "Ular": "• Ular: tertutup.", "Kuda": "• Kuda: nggak sabaran.", "Kambing": "• Kambing: peragu.", "Monyet": "• Monyet: gampang bosan.", "Ayam": "• Ayam: terlalu kritis.", "Anjing": "• Anjing: gampang cemas.", "Babi": "• Babi: gampang percaya."}
+  },
+  text: {
+    "top": "Tema yang paling sering muncul: ",
+    "none": "Belum ada tema yang muncul di dua elemen atau lebih. Kombinasinya warna-warni, tiap elemen bawa rasa sendiri.",
+    "combine": "Kalau digabung, polanya kira-kira begini:",
+    "shared": "Tantangan yang makin terasa karena beberapa elemen sejalan:",
+    "khas": "Kekurangan khas tiap elemen:",
+    "tarik": "Tarik-tarikan di dalam diri:",
+    "pilih": "Pilih satu yang paling terasa cocok; nggak perlu dicoba semua sekaligus."
+  }
+};
+
+var RATINGS = [
+  { v: "sangat", t: "Spot on. That's literally me." },
+  { v: "sebagian", t: "Some hits, some misses." },
+  { v: "kurang", t: "Not really me, tbh." }
+];
+
+var ELS = [
+  { k: "darah", label: "Darah", cv: "--c-darah" },
+  { k: "mbti", label: "MBTI", cv: "--c-mbti" },
+  { k: "zodiak", label: "Zodiak", cv: "--c-zodiak" },
+  { k: "shio", label: "Shio", cv: "--c-shio" },
+  { k: "suku", label: "Suku", cv: "--c-suku" }
+];
+
+var PAIRS = [
+  { k: "ei", a: ["I", "Introversion"], b: ["E", "Extraversion"] },
+  { k: "ns", a: ["N", "Intuition"], b: ["S", "Sensing"] },
+  { k: "ft", a: ["F", "Feeling"], b: ["T", "Thinking"] },
+  { k: "jp", a: ["J", "Judging"], b: ["P", "Perceiving"] }
+];
+
+
+/* ---------- konfigurasi tambahan ---------- */
+const MAX_SUKU = 3;
+const STEP_NAMES = ["Before We Begin", "The Character Build", "The Lore Unlocked", "Does This Check Out?", "Your Final Form"];
+const LAST = STEP_NAMES.length - 1;
+const EL_FULL = { darah: "Blood Type", mbti: "MBTI", zodiak: "Zodiac", shio: "Chinese Zodiac", suku: "Ethnic Background" };
+
+const PALETTES = {
+  midnight: { n: "Midnight", g: ["#0E1422", "#151D2E", "#26314B"], accent: "#D5C09A", glow: "#D5C09A", ink: "#F6F2EA", muted: "rgba(246,242,234,0.72)", scrim: "rgba(21,29,46,0.66)", pat: "#D5C09A", dots: ["#EBDCD5", "#E7DFF2", "#D5C09A", "#DCE9DF", "#AEB8CB"] },
+  ivory:    { n: "Ivory",    g: ["#FBF8F2", "#F6F2EA", "#E9E0CF"], accent: "#7A6438", glow: "#FFFFFF", ink: "#151D2E", muted: "rgba(21,29,46,0.66)", scrim: "rgba(255,253,248,0.8)", pat: "#8C7A55", light: true, dots: ["#B9837A", "#8E7FB0", "#B39B6E", "#6F9A7E", "#69758B"] },
+  lavender: { n: "Lavender", g: ["#F6F3FA", "#E7DFF2", "#D2C6E6"], accent: "#5D4E86", glow: "#FFFFFF", ink: "#151D2E", muted: "rgba(21,29,46,0.66)", scrim: "rgba(255,255,255,0.66)", pat: "#69758B", light: true, dots: ["#B9837A", "#8E7FB0", "#B39B6E", "#6F9A7E", "#69758B"] },
+  sage:     { n: "Sage",     g: ["#F3F8F4", "#DCE9DF", "#C1D5C6"], accent: "#3E6A4F", glow: "#FFFFFF", ink: "#151D2E", muted: "rgba(21,29,46,0.66)", scrim: "rgba(255,255,255,0.66)", pat: "#69758B", light: true, dots: ["#B9837A", "#8E7FB0", "#B39B6E", "#6F9A7E", "#69758B"] },
+  rose:     { n: "Rose",     g: ["#FAF3F0", "#EBDCD5", "#DBC3B8"], accent: "#86504A", glow: "#FFFFFF", ink: "#151D2E", muted: "rgba(21,29,46,0.66)", scrim: "rgba(255,255,255,0.66)", pat: "#69758B", light: true, dots: ["#B9837A", "#8E7FB0", "#B39B6E", "#6F9A7E", "#69758B"] },
+  slate:    { n: "Slate",    g: ["#151D2E", "#36425C", "#69758B"], accent: "#D5C09A", glow: "#D5C09A", ink: "#F6F2EA", muted: "rgba(246,242,234,0.78)", scrim: "rgba(21,29,46,0.55)", pat: "#F6F2EA", dots: ["#EBDCD5", "#E7DFF2", "#D5C09A", "#DCE9DF", "#C9D1DF"] }
+};
+
+const ZGLYPH = { aries: "\u2648", taurus: "\u2649", gemini: "\u264A", cancer: "\u264B", leo: "\u264C", virgo: "\u264D", libra: "\u264E", scorpio: "\u264F", sagitarius: "\u2650", capricorn: "\u2651", aquarius: "\u2652", pisces: "\u2653" };
+const SHIO_EMOJI = { tikus: "\uD83D\uDC00", kerbau: "\uD83D\uDC02", macan: "\uD83D\uDC05", kelinci: "\uD83D\uDC07", naga: "\uD83D\uDC09", ular: "\uD83D\uDC0D", kuda: "\uD83D\uDC0E", kambing: "\uD83D\uDC10", monyet: "\uD83D\uDC12", ayam: "\uD83D\uDC13", anjing: "\uD83D\uDC15", babi: "\uD83D\uDC16" };
+const SUKU_PATTERN = {
+  aceh: "lattice", alas: "stripes", maluku: "waves", amungme: "zigzag", asmat: "zigzag", baduy: "stripes", bali: "check",
+  banjar: "tumpal", batak: "stripes", betawi: "tumpal", bima: "check", bugis: "diamond", buton: "lattice", dani: "diamond",
+  dayak: "zigzag", flores: "diamond", gayo: "lattice", gorontalo: "check", jawa: "kawung", kubu: "zigzag", kutai: "tumpal",
+  madura: "stripes", makassar: "waves", manggarai: "diamond", melayu: "tumpal", mentawai: "stripes", minahasa: "diamond", minang: "tumpal",
+  nias: "check", osing: "mega", sasak: "tumpal", sumba: "diamond", sunda: "mega", tengger: "mega", toraja: "check"
+};
+const BG_LABELS = { campuran: "Mixed", suku: "Ethnic Background", zodiak: "Zodiac", shio: "Chinese Zodiac", darah: "Blood Type", mbti: "MBTI" };
+const EMOJI_FONT = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+const SYMBOL_FONT = '"Segoe UI Symbol","Noto Sans Symbols","Noto Sans Symbols 2","Apple Symbols","DejaVu Sans",serif';
+
+let S = { ei: "", ns: "", ft: "", jp: "", darah: "", zodiak: "", shio: "", suku: [], pal: "midnight", bg: "campuran", hide: {} };
+let cur = 0;
+let C = { nama: "" };
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const byId = (list, id) => list.find((x) => x.id === id) || null;
+const mbtiType = () => { const t = S.ei + S.ns + S.ft + S.jp; return t.length === 4 ? t : ""; };
+const elMeta = (k) => ELS.find((e) => e.k === k);
+const contactOk = () => C.nama.trim() !== "";
+
+/* ---------- formulir ---------- */
+function buildForm() {
+  let h = "";
+  ["A", "B", "AB", "O"].forEach((v) => {
+    h += '<button type="button" class="chip big" data-act="darah" data-v="' + v + '" aria-pressed="false">' + v + "</button>";
+  });
+  $("#darah").innerHTML = h;
+
+  h = "";
+  PAIRS.forEach((p) => {
+    h += '<div class="pair" role="group" aria-label="' + p.a[1] + " or " + p.b[1] + '">';
+    [p.a, p.b].forEach((x) => {
+      h += '<button type="button" class="chip" data-act="mbti" data-k="' + p.k + '" data-v="' + x[0] + '" aria-pressed="false"><b>' + x[0] + "</b><span>" + x[1] + "</span></button>";
+    });
+    h += "</div>";
+  });
+  $("#mbti").innerHTML = h;
+
+  h = "";
+  SUKU.slice().sort((a, b) => a.n.localeCompare(b.n, "id")).forEach((s) => {
+    h += '<button type="button" class="chip" data-act="suku" data-v="' + s.id + '" aria-pressed="false">' + esc(s.n) + "</button>";
+  });
+  $("#suku").innerHTML = h;
+
+  $("#steps").innerHTML = STEP_NAMES.map((n, i) => '<li><button type="button" class="step" data-go="' + i + '">' + n + "</button></li>").join("");
+}
+
+function zodiakFromDate(str) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str || "");
+  if (!m) return "";
+  const md = parseInt(m[2], 10) * 100 + parseInt(m[3], 10);
+  if (md >= 1222 || md <= 119) return "capricorn";
+  if (md <= 218) return "aquarius";
+  if (md <= 320) return "pisces";
+  if (md <= 419) return "aries";
+  if (md <= 520) return "taurus";
+  if (md <= 620) return "gemini";
+  if (md <= 722) return "cancer";
+  if (md <= 822) return "leo";
+  if (md <= 922) return "virgo";
+  if (md <= 1022) return "libra";
+  if (md <= 1121) return "scorpio";
+  return "sagitarius";
+}
+
+/* Tahun shio berganti saat Imlek, jadi pakai kalender Tionghoa bawaan browser.
+   Jika tidak didukung, pakai tahun Masehi. */
+function shioYear(y, mo, d) {
+  try {
+    const parts = new Intl.DateTimeFormat("en-u-ca-chinese", { timeZone: "UTC", year: "numeric" })
+      .formatToParts(new Date(Date.UTC(y, mo - 1, d, 12)));
+    const rel = parts.find((p) => p.type === "relatedYear");
+    if (rel && /^\d{4}$/.test(rel.value)) return parseInt(rel.value, 10);
+  } catch (e) {}
+  return y;
+}
+
+/* Zodiak dari tanggal, shio dari tahun Imlek. */
+function setBirth(str) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str || "");
+  const y = m ? parseInt(m[1], 10) : 0;
+  const ok = y >= 1900 && y <= 2100;
+  const cy = ok ? shioYear(y, parseInt(m[2], 10), parseInt(m[3], 10)) : 0;
+  S.zodiak = ok ? zodiakFromDate(str) : "";
+  S.shio = ok ? SHIO_ORDER[(((cy - 4) % 12) + 12) % 12] : "";
+}
+
+function syncControls() {
+  document.querySelectorAll('[data-act="darah"]').forEach((b) => b.setAttribute("aria-pressed", String(S.darah === b.dataset.v)));
+  document.querySelectorAll('[data-act="mbti"]').forEach((b) => b.setAttribute("aria-pressed", String(S[b.dataset.k] === b.dataset.v)));
+  document.querySelectorAll('[data-act="suku"]').forEach((b) => b.setAttribute("aria-pressed", String(S.suku.indexOf(b.dataset.v) > -1)));
+  $("#birthOut").innerHTML = S.zodiak
+    ? '<span class="d" style="--c: var(--c-zodiak)"><small>Zodiak</small><b>' + esc(byId(ZODIAK, S.zodiak).n) + '</b></span>' +
+      '<span class="d" style="--c: var(--c-shio)"><small>Shio</small><b>' + esc(byId(SHIO, S.shio).n) + "</b></span>"
+    : "";
+  const letters = PAIRS.map((p) => S[p.k] || "_").join("");
+  const type = mbtiType();
+  $("#mbtiOut").innerHTML = esc(letters) + (type ? "" : "<small>Pick one letter from each pair.</small>");
+}
+
+/* ---------- pilihan dan analisis ---------- */
+function selections() {
+  const out = [];
+  if (S.darah) out.push({ k: "darah", value: S.darah });
+  const type = mbtiType();
+  if (type) out.push({ k: "mbti", value: type });
+  if (S.zodiak) { const z = byId(ZODIAK, S.zodiak); out.push({ k: "zodiak", value: z.n, id: z.id }); }
+  if (S.shio) { const sh = byId(SHIO, S.shio); out.push({ k: "shio", value: sh.n, id: sh.id }); }
+  if (S.suku.length) out.push({ k: "suku", value: S.suku.map((id) => byId(SUKU, id).n).join(", "), ids: S.suku.slice() });
+  return out;
+}
+
+
+/* Susun hasil untuk { darah, mbti, zodiak, shio } plus suku (opsional, elemen kelima).
+   Tanpa suku, teksnya sama persis dengan data hasil SYNARA. */
+const SYN_KEYS = ["darah", "mbti", "zodiak", "shio"];
+const SYN_SOLO = ["mbti", "zodiak", "shio", "darah", "suku"];
+const jd = (a) => a.length === 1 ? a[0] : a.length === 2 ? a.join(" dan ") : a.slice(0, -1).join(", ") + ", dan " + a[a.length - 1];
+const LINE2_LIMA = {
+  4: "Ada tema yang muncul di empat elemen. Ini sih sudah terang benderang.",
+  5: "Ada tema yang muncul di kelima elemen. Kompak banget!"
+};
+
+/* Kalimat khusus gambar hasil: santai, catchy, dan seru dibagikan. */
+const CARD_BM = {
+  pemimpin: "Auto jadi ketua kelompok", empati: "Radar perasaan selalu on", analitis: "Mikir matang dulu baru gas",
+  disiplin: "Hidup tenang kalau semua tertata", kreatif: "Kepala penuh ide out of the box", mandiri: "Jalan sendiri juga hayuk",
+  harmoni: "Penjaga vibe biar tetap adem", ambisi: "Habis satu target langsung cari yang baru", setia: "Sekali percaya bakal dijaga lama",
+  hatihati: "Cek risiko dulu sebelum melangkah", ekspresif: "Ekspresinya nggak bisa bohong", tenang: "Kalem di tengah kekacauan",
+  idealis: "Pegang prinsip dengan mimpi yang besar", praktis: "Langsung ke intinya aja", spontan: "Paling cepat bilang \"gas!\""
+};
+const CARD_CH = {
+  pemimpin: "Suka ambil alih tanpa sadar", empati: "Ikut capek mikirin perasaan orang", analitis: "Overthinking level dewa",
+  disiplin: "Rencana berubah, mood ikut berantakan", kreatif: "Idenya seribu, yang kelar satu", mandiri: "Gengsi minta tolong",
+  harmoni: "Susah bilang \"tidak\" demi damai", ambisi: "Ngegas terus, lupa rebahan", setia: "Susah move on dari yang bikin capek",
+  hatihati: "Cemasnya duluan, langkahnya belakangan", ekspresif: "Reaksi duluan, mikir belakangan", tenang: "Dipendam sampai numpuk",
+  idealis: "Gampang kecewa kalau nggak sesuai ekspektasi", praktis: "Nggak sabaran sama yang abstrak", spontan: "Cepat bosan, gampang ganti arah"
+};
+const CARD_CLASH = {
+  "spontan-disiplin": "Pengen bebas, tapi panik tanpa rencana",
+  "pemimpin-harmoni": "Mau tegas, tapi takut suasana jadi canggung",
+  "analitis-empati": "Kepala logis, hati gampang nggak tega",
+  "ambisi-tenang": "Mau maju terus, tapi butuh rebahan",
+  "ekspresif-hatihati": "Kadang heboh, kadang mendadak kalem",
+  "mandiri-setia": "Butuh me time, tapi nggak mau jauh",
+  "idealis-praktis": "Mimpinya tinggi, kakinya tetap napak"
+};
+/* bumbu dari "Kurangnya" tiap elemen */
+const CARD_KHAS = {
+  darah: { A: "perfeksionis garis keras", B: "kadang kelihatan cuek", AB: "bikin orang menebak-nebak", O: "kepala batu" },
+  mbti: {
+    INTJ: "susah melepas kendali", INTP: "suka menunda eksekusi", ENTJ: "gregetan sama proses lambat", ENTP: "cepat bosan setelah awal yang seru",
+    INFJ: "capek batin karena perfeksionis", INFP: "terlalu keras ke diri sendiri", ENFJ: "gampang baper kalau ditolak", ENFP: "pusing kalau pilihannya kebanyakan",
+    ISTJ: "kaget kalau rencana mendadak berubah", ISFJ: "susah bilang \"tidak\"", ESTJ: "agak kaku soal aturan", ESFJ: "kepikiran penilaian orang",
+    ISTP: "susah cerita soal perasaan", ISFP: "menghindari konflik", ESTP: "impulsif", ESFP: "gampang terdistraksi"
+  },
+  zodiak: {
+    Aries: "nggak sabaran", Taurus: "keras kepala", Gemini: "gampang bosan", Cancer: "mood naik turun", Leo: "gengsinya tinggi", Virgo: "terlalu kritis",
+    Libra: "lama kalau harus memutuskan", Scorpio: "susah memaafkan", Sagitarius: "blak-blakan kebablasan", Capricorn: "kelewat serius",
+    Aquarius: "terkesan berjarak", Pisces: "gampang ikut baper"
+  },
+  shio: {
+    Tikus: "gampang khawatir", Kerbau: "kaku", Macan: "impulsif", Kelinci: "menghindari konflik", Naga: "dominan", Ular: "tertutup",
+    Kuda: "nggak sabaran", Kambing: "peragu", Monyet: "gampang bosan", Ayam: "terlalu kritis", Anjing: "gampang cemas", Babi: "gampang percaya"
+  }
+};
+const lowFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
+const uniq = (a) => a.filter((x, i) => a.indexOf(x) === i);
+
+function synResult(v, sukuIds) {
+  const D = SYNARA_DATA, T = D.text;
+  const su = (sukuIds || []).map((id) => byId(SUKU, id));
+  const keys = SYN_KEYS.concat(su.length ? ["suku"] : []);
+  const N = keys.length;
+  const tg = {}; SYN_KEYS.forEach((k) => { tg[k] = D.tags[k][v[k]]; });
+  if (su.length) { tg.suku = []; su.forEach((x) => x.t.forEach((t) => { if (tg.suku.indexOf(t) < 0) tg.suku.push(t); })); }
+  const nm = { darah: "darah " + v.darah, mbti: v.mbti, zodiak: v.zodiak, shio: v.shio, suku: "suku " + jd(su.map((x) => x.n)) };
+  const count = {}, src = {};
+  keys.forEach((k) => tg[k].forEach((t) => { count[t] = (count[t] || 0) + 1; (src[t] = src[t] || []).push(nm[k]); }));
+  const ranked = Object.keys(count).sort((a, b) => count[b] - count[a] || D.order.indexOf(a) - D.order.indexOf(b));
+  const shared = ranked.filter((t) => count[t] >= 2);
+  const solo = SYN_SOLO.filter((k) => keys.indexOf(k) > -1);
+
+  /* Benang merah */
+  let intro, picks = [];
+  if (shared.length) {
+    const max = count[ranked[0]];
+    intro = [T.top + jd(shared.slice(0, 3).map((t) => D.labels[t] + " (" + count[t] + " dari " + N + " elemen)")) + ".",
+      N === 5 && LINE2_LIMA[max] ? LINE2_LIMA[max] : D.line2[max]];
+    shared.slice(0, 5).forEach((t) => picks.push([t, jd(src[t])]));
+    solo.forEach((k) => tg[k].forEach((t) => {
+      if (picks.length < 3 && !picks.some((x) => x[0] === t)) picks.push([t, nm[k]]);
+    }));
+  } else {
+    intro = [T.none];
+    solo.forEach((k) => picks.push([tg[k][0], nm[k]]));
+  }
+
+  /* Sisi yang bikin ribet: tantangan yang menguat + tarik-menarik */
+  const sharedCh = shared.slice(0, 3);
+  const cl = D.clash.filter((c) => count[c[0]] && count[c[1]]).slice(0, 2);
+
+  /* teks lengkap dengan sumber, sama dengan format data (dipakai untuk pemeriksaan) */
+  const parts = [];
+  if (sharedCh.length) parts.push([T.shared].concat(sharedCh.map((t) => D.chal[t].replace("{src}", "(" + src[t].join(" + ") + ")"))).join("\n"));
+  parts.push([T.khas].concat(SYN_KEYS.map((k) => D.c[k][v[k]])).join("\n"));
+  if (cl.length) parts.push([T.tarik].concat(cl.map((c) => "• " + c[2] + " (" + D.labels[c[0]] + " dari " + jd(src[c[0]]) + "; " + D.labels[c[1]] + " dari " + jd(src[c[1]]) + ")")).join("\n"));
+  const text = {
+    gambaran: SYN_KEYS.map((k) => D.g[k][v[k]]).join("\n"),
+    benangMerah: intro.concat([T.combine], picks.map((x) => "• " + D.phrase[x[0]] + " (dari " + x[1] + ")")).join("\n"),
+    tantangan: parts.join("\n\n"),
+    saran: SYN_KEYS.map((k) => D.s[k][v[k]]).concat(["", T.pilih]).join("\n")
+  };
+
+  /* bentuk untuk tampilan: tanpa keterangan sumber */
+  const afterColon = (line) => line.slice(line.indexOf(": ") + 2);
+  const elements = SYN_KEYS.map((k) => {
+    const g = D.g[k][v[k]].slice(2), c = g.indexOf(": ");
+    /* "Kekuatannya: a; b; c." digabung ke deskripsi menjadi "A, b, dan c." */
+    const desc = g.slice(c + 2).replace(/ Kekuatannya: ([^:]*)\.$/, (m0, list) => {
+      const t = jd(list.split("; "));
+      return " " + t.charAt(0).toUpperCase() + t.slice(1) + ".";
+    });
+    return { k: k, label: g.slice(0, c), desc: desc, khas: afterColon(D.c[k][v[k]]) };
+  }).concat(su.map((x) => ({ k: "suku", label: "Suku " + x.h, desc: x.d, khas: "" })));
+  let ribet = sharedCh.map((t) => D.chal[t].slice(2).replace(" {src}", "")).concat(cl.map((c) => c[2]));
+  if (!ribet.length) ribet = SYN_KEYS.map((k) => D.c[k][v[k]].slice(2));
+  return {
+    text, elements, ribet,
+    bmIntro: intro.slice(0, 1), /* tanpa kalimat "Ada tema yang muncul di … elemen" */
+    bmList: picks.map((x) => D.phrase[x[0]]),
+    /* bahan kalimat gambar hasil */
+    card: {
+      bm: picks.map((x) => CARD_BM[x[0]]),
+      ribet: sharedCh.map((t) => CARD_CH[t]).concat(cl.map((c) => CARD_CLASH[c[0] + "-" + c[1]])),
+      khas: uniq(SYN_KEYS.map((k) => CARD_KHAS[k][v[k]]))
+    },
+    saran: SYN_KEYS.map((k) => D.s[k][v[k]].slice(2).replace(/ \(dari [^()]*\)$/, "")),
+    footer: T.pilih
+  };
+}
+
+/* Nilai kombinasi dari profil yang sedang diisi; null jika belum lengkap. */
+function synValues() {
+  const type = mbtiType();
+  if (!S.darah || !type || !S.zodiak || !S.shio) return null;
+  return { darah: S.darah, mbti: type, zodiak: byId(ZODIAK, S.zodiak).n, shio: byId(SHIO, S.shio).n };
+}
+
+
+
+/* ---------- render slide hasil ---------- */
+let R = { choice: "", sent: false };
+
+const listHtml = (items, cv) => '<ul class="pts" style="--c: var(' + cv + ')">' + items.map((t) => "<li><span>" + esc(t) + "</span></li>").join("") + "</ul>";
+
+function rateHtml() {
+  let h = '<h2 class="sec" tabindex="-1" id="rateTitle">So, How Accurate Is This?</h2>' +
+    '<p class="sec-intro">Be honest. How much of this actually feels like you?</p><div class="rate"><div class="opts" role="radiogroup" aria-labelledby="rateTitle">';
+  RATINGS.forEach((r) => {
+    h += '<label class="opt"><input type="radio" name="rate" value="' + r.v + '"' + (R.choice === r.v ? " checked" : "") + ">" + r.t + "</label>";
+  });
+  return h + "</div></div>";
+}
+
+/* "Wardah's Personality, Unlocked"; nama berakhiran s cukup diberi apostrof ("Agus' Personality, Unlocked"). */
+function unlockedTitle() {
+  const nm = C.nama.trim();
+  if (!nm) return "Personality, Unlocked";
+  return nm + (/s$/i.test(nm) ? "'" : "'s") + " Personality, Unlocked";
+}
+
+function renderSlides() {
+  const sel = selections(), v = synValues();
+  if (!v) { $("#s2").innerHTML = ""; $("#s3").innerHTML = ""; return; }
+  const r = synResult(v, S.suku);
+  let h = '<h2 class="sec" tabindex="-1">' + esc(unlockedTitle()) + "</h2>";
+  h += '<p class="profile-line">' + sel.map((s) => esc(s.value)).join(" · ") + "</p>";
+  h += '<p class="hint">Anggap ini cermin buat seru-seruan, bukan vonis. Ambil yang pas, skip yang nggak.</p>';
+  h += '<section class="block"><p class="kicker">The Lore Behind Me</p><h3 class="sub">Five Elements, One Complicated Human</h3><ul class="pts">' +
+    r.elements.map((e) => '<li style="--c: var(' + elMeta(e.k).cv + ')"><b>' + esc(e.label) + "</b><span>" + esc(e.desc) + "</span>" +
+      (e.khas ? '<span class="khas"><em>Kurangnya:</em> ' + esc(e.khas) + "</span>" : "") + "</li>").join("") + "</ul></section>";
+  h += '<section class="block"><p class="kicker">The Pattern Is Patterning</p><h3 class="sub">The Common Thread</h3>' +
+    r.bmIntro.map((t) => '<p class="dp">' + esc(t) + "</p>").join("") + listHtml(r.bmList, "--gold") + "</section>";
+  h += '<section class="block"><p class="kicker">The Plot Thickens</p><h3 class="sub">Where Things Get Complicated</h3>' + listHtml(r.ribet, "--c-darah") + "</section>";
+  h += '<section class="block"><p class="kicker">The Character Development</p><h3 class="sub">Small Steps, Big Shift</h3>' + listHtml(r.saran, "--c-shio") + "</section>";
+  $("#s2").innerHTML = h;
+  $("#s3").innerHTML = rateHtml();
+}
+
+/* ---------- navigasi slide ---------- */
+function hasSel() { return !!synValues(); }
+
+function goTo(i, focus) {
+  if (i < 0 || i > LAST) return;
+  if (i > 0 && !contactOk()) { showContactError(); return; }
+  if (i > 1 && !hasSel()) return;
+  if (i === LAST && !R.sent) { if (cur !== 3) goTo(3); return; } /* wajib menilai dulu */
+  cur = i;
+  for (let k = 0; k <= LAST; k++) $("#s" + k).classList.toggle("on", k === i);
+  updateChrome();
+  if (focus !== false) {
+    window.scrollTo(0, 0);
+    const hd = $("#s" + i + " h2");
+    if (hd) { try { hd.focus({ preventScroll: true }); } catch (e) { hd.focus(); } }
+  }
+  if (i === 3) logToSheet();
+  if (i === LAST) { buildShareControls(); queueDraw(); }
+}
+
+function showContactError() {
+  $("#nama").setAttribute("aria-invalid", "true");
+  const hint = $("#contactHint");
+  hint.textContent = "Isi nama dulu, ya.";
+  hint.classList.add("err");
+  $("#nama").focus();
+}
+
+function updateChrome() {
+  const ok = hasSel();
+  document.querySelectorAll(".step").forEach((b) => {
+    const i = parseInt(b.dataset.go, 10);
+    b.disabled = (i > 1 && !ok) || (i === LAST && !R.sent);
+    b.classList.toggle("done", i < cur);
+    if (i === cur) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+  });
+  $("#prev").style.visibility = cur === 0 ? "hidden" : "visible";
+  $("#next").textContent = cur === LAST ? "Edit Profile" : "Next";
+  $("#next").style.visibility = cur === 3 ? "hidden" : "visible"; /* di slide penilaian, lanjut lewat Kirim Penilaian */
+  $("#next").disabled = cur === 1 && !ok;
+}
+
+function update() {
+  syncControls();
+  renderSlides();
+  updateChrome();
+  if (cur === LAST) { buildShareControls(); queueDraw(); }
+}
+
+/* ---------- kontrol bagikan ---------- */
+function availableBg() {
+  const keys = selections().map((s) => s.k);
+  return ["campuran"].concat(["suku", "zodiak", "shio", "darah", "mbti"].filter((k) => keys.indexOf(k) > -1));
+}
+
+function buildShareControls() {
+  const avail = availableBg();
+  if (avail.indexOf(S.bg) < 0) S.bg = "campuran";
+  $("#palChips").innerHTML = Object.keys(PALETTES).map((k) => {
+    const p = PALETTES[k];
+    return '<button type="button" class="swatch" data-share="pal" data-v="' + k + '" aria-pressed="' + (S.pal === k) + '" style="--g: linear-gradient(135deg,' + p.g.join(",") + ')"><span class="sw"></span>' + p.n + "</button>";
+  }).join("");
+  $("#hideChips").innerHTML = selections().map((x) =>
+    '<button type="button" class="chip" data-share="hide" data-v="' + x.k + '" aria-pressed="' + !!S.hide[x.k] + '">' + EL_FULL[x.k] + "</button>").join("");
+  $("#bgChips").innerHTML = avail.map((k) =>
+    '<button type="button" class="chip" data-share="bg" data-v="' + k + '" aria-pressed="' + (S.bg === k) + '">' + BG_LABELS[k] + "</button>").join("");
+}
+
+/* ---------- gambar ringkasan (canvas) ---------- */
+function mulberry(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function hashStr(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function hexA(hex, a) {
+  const n = parseInt(hex.slice(1), 16);
+  return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
+}
+function rr(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+function wrap(ctx, text, maxW) {
+  const words = String(text).split(" ");
+  const out = [];
+  let line = "";
+  words.forEach((w) => {
+    const t = line ? line + " " + w : w;
+    if (ctx.measureText(t).width > maxW && line) { out.push(line); line = w; } else { line = t; }
+  });
+  if (line) out.push(line);
+  return out;
+}
+
+/* latar */
+function bgBase(ctx, W, H, pal) {
+  const g = ctx.createLinearGradient(0, 0, W * 0.35, H);
+  g.addColorStop(0, pal.g[0]); g.addColorStop(0.55, pal.g[1]); g.addColorStop(1, pal.g[2]);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  const r = ctx.createRadialGradient(W * 0.85, H * 0.12, 0, W * 0.85, H * 0.12, Math.max(W, H) * 0.6);
+  r.addColorStop(0, hexA(pal.glow, 0.3)); r.addColorStop(1, hexA(pal.glow, 0));
+  ctx.fillStyle = r; ctx.fillRect(0, 0, W, H);
+}
+
+function bgZodiak(ctx, W, H, pal, a, id) {
+  const rng = mulberry(hashStr("z" + id));
+  ctx.save();
+  ctx.fillStyle = pal.pat;
+  for (let i = 0; i < 230; i++) {
+    ctx.globalAlpha = (0.2 + rng() * 0.6) * a;
+    ctx.beginPath(); ctx.arc(rng() * W, rng() * H, rng() * 2.4 + 0.5, 0, Math.PI * 2); ctx.fill();
+  }
+  const pts = [];
+  const n = 7 + Math.floor(rng() * 3);
+  let x = W * (0.18 + rng() * 0.25), y = H * (0.1 + rng() * 0.08);
+  for (let i = 0; i < n; i++) {
+    pts.push([x, y]);
+    x += (rng() * 0.16 + 0.04) * W * (rng() < 0.5 ? -1 : 1);
+    x = Math.min(W * 0.92, Math.max(W * 0.08, x));
+    y += (rng() * 0.06 + 0.025) * H;
+  }
+  ctx.strokeStyle = pal.pat; ctx.lineWidth = 2.5; ctx.globalAlpha = 0.45 * a;
+  ctx.beginPath(); pts.forEach((p, i) => { if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }); ctx.stroke();
+  pts.forEach((p) => {
+    ctx.globalAlpha = 0.18 * a; ctx.beginPath(); ctx.arc(p[0], p[1], 22, 0, Math.PI * 2); ctx.fillStyle = pal.pat; ctx.fill();
+    ctx.globalAlpha = 0.85 * a; ctx.beginPath(); ctx.arc(p[0], p[1], 7, 0, Math.PI * 2); ctx.fill();
+  });
+  ctx.globalAlpha = 0.11 * a;
+  ctx.fillStyle = pal.pat; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.font = Math.round(Math.min(W, H) * 0.92) + "px " + SYMBOL_FONT;
+  ctx.fillText((ZGLYPH[id] || "\u2605") + "\uFE0E", W * 0.5, H * 0.56);
+  ctx.restore();
+}
+
+function bgShio(ctx, W, H, pal, a, id) {
+  const rng = mulberry(hashStr("s" + id));
+  const em = SHIO_EMOJI[id] || "\uD83D\uDC09";
+  const mn = Math.min(W, H);
+  const cx = W * 0.5, cy = H > W ? H * 0.3 : H * 0.5;
+  ctx.save();
+  ctx.strokeStyle = pal.pat; ctx.lineWidth = 3;
+  for (let i = 1; i <= 8; i++) {
+    ctx.globalAlpha = Math.max(0.03, 0.24 - i * 0.025) * a;
+    ctx.beginPath(); ctx.arc(cx, cy, i * mn * 0.1, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  for (let i = 0; i < 20; i++) {
+    ctx.globalAlpha = 0.09 * a;
+    ctx.font = Math.round(60 + rng() * 70) + "px " + EMOJI_FONT;
+    ctx.fillText(em, rng() * W, rng() * H);
+  }
+  ctx.globalAlpha = 0.3 * a;
+  ctx.font = Math.round(mn * 0.58) + "px " + EMOJI_FONT;
+  ctx.fillText(em, cx, cy);
+  ctx.restore();
+}
+
+function bgDarah(ctx, W, H, pal, a, v) {
+  const rng = mulberry(hashStr("d" + v));
+  ctx.save();
+  ctx.fillStyle = pal.pat;
+  for (let i = 0; i < 16; i++) {
+    const x = rng() * W, y = rng() * H, s = 50 + rng() * 130;
+    ctx.globalAlpha = (0.07 + rng() * 0.12) * a;
+    ctx.beginPath();
+    ctx.moveTo(x, y - s);
+    ctx.bezierCurveTo(x + s * 0.9, y + s * 0.2, x + s * 0.55, y + s, x, y + s);
+    ctx.bezierCurveTo(x - s * 0.55, y + s, x - s * 0.9, y + s * 0.2, x, y - s);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 0.26 * a;
+  ctx.strokeStyle = pal.pat; ctx.lineWidth = 6; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.font = '700 ' + Math.round(Math.min(W, H) * (v.length > 1 ? 0.62 : 0.85)) + 'px "DM Sans",system-ui,sans-serif';
+  if (!S.hide.darah) ctx.strokeText(v, W * 0.5, H * 0.6);
+  ctx.restore();
+}
+
+function bgMbti(ctx, W, H, pal, a, type) {
+  const rng = mulberry(hashStr("m" + type));
+  ctx.save();
+  ctx.fillStyle = pal.pat;
+  ctx.globalAlpha = 0.22 * a;
+  for (let x = 30; x < W; x += 54) for (let y = 30; y < H; y += 54) { ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill(); }
+  ctx.strokeStyle = pal.pat;
+  for (let i = 0; i < 7; i++) {
+    ctx.globalAlpha = (0.12 + rng() * 0.12) * a;
+    ctx.lineWidth = 2 + rng() * 3;
+    const r = 120 + i * Math.min(W, H) * 0.1;
+    const st = rng() * Math.PI * 2;
+    ctx.beginPath(); ctx.arc(W * 0.5, H * 0.5, r, st, st + 1.2 + rng() * 2.4); ctx.stroke();
+  }
+  ctx.globalAlpha = 0.09 * a;
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.font = '700 ' + Math.round(Math.min(W, H) * 0.5) + 'px "DM Sans",system-ui,sans-serif';
+  if (!S.hide.mbti) type.split("").forEach((ch, i) => { ctx.fillText(ch, W * (0.28 + 0.44 * (i % 2)), H * (0.3 + 0.4 * Math.floor(i / 2))); });
+  ctx.restore();
+}
+
+const PATTERNS = {
+  kawung(ctx, W, H, t) {
+    const r = t * 0.3;
+    for (let y = 0; y < H + t; y += t) for (let x = 0; x < W + t; x += t) {
+      const cx = x + t / 2, cy = y + t / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx - r * 0.55 + r * 0.55, cy); ctx.ellipse(cx - r * 0.55, cy, r * 0.55, r * 0.28, 0, 0, Math.PI * 2);
+      ctx.moveTo(cx + r * 1.1, cy); ctx.ellipse(cx + r * 0.55, cy, r * 0.55, r * 0.28, 0, 0, Math.PI * 2);
+      ctx.moveTo(cx + r * 0.28, cy - r * 0.55); ctx.ellipse(cx, cy - r * 0.55, r * 0.28, r * 0.55, 0, 0, Math.PI * 2);
+      ctx.moveTo(cx + r * 0.28, cy + r * 0.55); ctx.ellipse(cx, cy + r * 0.55, r * 0.28, r * 0.55, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+  },
+  mega(ctx, W, H, t) {
+    let row = 0;
+    for (let y = 0; y < H + t; y += t * 0.6, row++) for (let x = -t; x < W + t; x += t) {
+      const cx = x + (row % 2 ? t / 2 : 0), cy = y;
+      for (let k = 0; k < 4; k++) { ctx.beginPath(); ctx.arc(cx, cy, t * 0.44 - k * t * 0.1, Math.PI, 0); ctx.stroke(); }
+    }
+  },
+  stripes(ctx, W, H, t) {
+    const k = (t || 110) / 110;
+    for (let y = 0; y < H; y += 64 * k) {
+      ctx.fillRect(0, y, W, 22 * k);
+      ctx.beginPath(); ctx.moveTo(0, y + 38 * k); ctx.lineTo(W, y + 38 * k); ctx.stroke();
+    }
+  },
+  diamond(ctx, W, H, t) {
+    for (let y = 0; y < H + t; y += t) for (let x = 0; x < W + t; x += t) {
+      const cx = x + t / 2, cy = y + t / 2;
+      [t * 0.5, t * 0.22].forEach((d) => {
+        ctx.beginPath(); ctx.moveTo(cx, cy - d); ctx.lineTo(cx + d, cy); ctx.lineTo(cx, cy + d); ctx.lineTo(cx - d, cy); ctx.closePath(); ctx.stroke();
+      });
+    }
+  },
+  tumpal(ctx, W, H, t) {
+    for (let y = 0; y < H + t; y += t) for (let x = 0; x < W + t; x += t) {
+      [[1, 0], [0.5, 0.22]].forEach((s) => {
+        const w = t * s[0], top = y + t * 0.1 + s[1] * t * 0.5;
+        ctx.beginPath(); ctx.moveTo(x + (t - w) / 2, y + t * 0.85); ctx.lineTo(x + t / 2, top); ctx.lineTo(x + (t + w) / 2, y + t * 0.85); ctx.closePath(); ctx.stroke();
+      });
+    }
+  },
+  check(ctx, W, H, t) {
+    const s = 70 * (t || 110) / 110;
+    for (let j = 0; j * s < H; j++) for (let i = 0; i * s < W; i++) { if ((i + j) % 2 === 0) ctx.fillRect(i * s, j * s, s, s); }
+  },
+  waves(ctx, W, H, t) {
+    const k = (t || 110) / 110;
+    for (let y = 0; y < H + 40; y += 46 * k) {
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 12 * k) { const yy = y + Math.sin(x / (60 * k) + y / (30 * k)) * 14 * k; if (x) ctx.lineTo(x, yy); else ctx.moveTo(x, yy); }
+      ctx.stroke();
+    }
+  },
+  zigzag(ctx, W, H, t) {
+    const q = (t || 110) / 110;
+    for (let y = 30 * q; y < H + 40; y += 64 * q) {
+      ctx.beginPath(); ctx.moveTo(0, y);
+      for (let x = 0, k = 0; x <= W + 32; x += 32 * q, k++) ctx.lineTo(x, y + (k % 2 ? 18 : -18) * q);
+      ctx.stroke();
+    }
+  },
+  lattice(ctx, W, H, t) {
+    for (let k = -H; k < W + H; k += 64 * (t || 110) / 110) {
+      ctx.beginPath(); ctx.moveTo(k, 0); ctx.lineTo(k + H, H); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(k + H, 0); ctx.lineTo(k, H); ctx.stroke();
+    }
+  }
+};
+
+function bgSukuPattern(ctx, W, H, pal, a, id, y0, y1) {
+  const fn = PATTERNS[SUKU_PATTERN[id] || "diamond"];
+  ctx.save();
+  ctx.beginPath(); ctx.rect(0, y0, W, y1 - y0); ctx.clip();
+  ctx.strokeStyle = pal.pat; ctx.fillStyle = pal.pat;
+  ctx.lineWidth = 3;
+  ctx.globalAlpha = 0.2 * a;
+  fn(ctx, W, H, 110);
+  ctx.restore();
+}
+
+/* latar campuran: tiap elemen punya tempat sendiri, tidak saling menumpuk */
+function medallion(ctx, s, id, cx, cy, r, pal, color) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fillStyle = pal.scrim; ctx.fill();
+  ctx.lineWidth = 4; ctx.strokeStyle = color; ctx.stroke();
+  ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = color;
+  if (s.k === "darah") {
+    const d = r * 0.62;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - d);
+    ctx.bezierCurveTo(cx + d * 0.9, cy + d * 0.2, cx + d * 0.55, cy + d, cx, cy + d);
+    ctx.bezierCurveTo(cx - d * 0.55, cy + d, cx - d * 0.9, cy + d * 0.2, cx, cy - d);
+    ctx.fill();
+    if (!S.hide.darah) {
+      ctx.fillStyle = pal.light ? "#FFFFFF" : pal.g[0];
+      ctx.font = '700 ' + Math.round(r * (s.value.length > 1 ? 0.42 : 0.55)) + 'px "DM Sans",system-ui,sans-serif';
+      ctx.fillText(s.value, cx, cy + d * 0.38);
+    }
+  } else if (s.k === "mbti") {
+    if (S.hide.mbti) {
+      /* tanpa huruf: empat titik sebagai lambang empat dimensi */
+      [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach((o) => { ctx.beginPath(); ctx.arc(cx + o[0] * r * 0.26, cy + o[1] * r * 0.26, r * 0.13, 0, Math.PI * 2); ctx.fill(); });
+    } else {
+      ctx.font = '700 ' + Math.round(r * 0.46) + 'px "DM Sans",system-ui,sans-serif';
+      ctx.fillText(s.value, cx, cy + 2);
+    }
+  } else if (s.k === "zodiak") {
+    ctx.font = Math.round(r * 1.05) + "px " + SYMBOL_FONT;
+    ctx.fillText((ZGLYPH[id] || "★") + "︎", cx, cy + 3);
+  } else if (s.k === "shio") {
+    ctx.font = Math.round(r * 1.05) + "px " + EMOJI_FONT;
+    ctx.fillText(SHIO_EMOJI[id] || "🐉", cx, cy + 4);
+  } else if (s.k === "suku") {
+    ctx.beginPath(); ctx.arc(cx, cy, r - 6, 0, Math.PI * 2); ctx.clip();
+    ctx.translate(cx - r, cy - r);
+    ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.globalAlpha = 0.85;
+    PATTERNS[SUKU_PATTERN[id] || "diamond"](ctx, r * 2, r * 2, r * 0.7);
+  }
+  ctx.restore();
+}
+
+function bgCampuran(ctx, W, H, pal, sel) {
+  /* gumpalan warna lembut di tepi kartu */
+  const spots = [[0.02, 0.1], [1.0, 0.3], [0.0, 0.62], [1.0, 0.86], [0.45, 1.02]];
+  sel.forEach((s, i) => {
+    const c = pal.dots[ELS.findIndex((e) => e.k === s.k)];
+    const x = W * spots[i][0], y = H * spots[i][1], r = W * 0.62;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, hexA(c, pal.light ? 0.45 : 0.14)); g.addColorStop(1, hexA(c, 0));
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  });
+  /* taburan bintang kecil */
+  const rng = mulberry(hashStr("mix" + sel.map((s) => s.value).join("|")));
+  ctx.save(); ctx.fillStyle = pal.pat;
+  for (let i = 0; i < 70; i++) {
+    ctx.globalAlpha = 0.12 + rng() * 0.25;
+    ctx.beginPath(); ctx.arc(rng() * W, rng() * H, rng() * 2.2 + 0.6, 0, Math.PI * 2); ctx.fill();
+  }
+  ctx.restore();
+  /* pita motif suku di bagian bawah */
+  const suku = sel.find((s) => s.k === "suku");
+  if (suku) {
+    const bw = W / suku.ids.length;
+    suku.ids.forEach((id, i) => {
+      ctx.save();
+      ctx.beginPath(); ctx.rect(i * bw, H - 70, bw, 70); ctx.clip();
+      ctx.strokeStyle = pal.pat; ctx.fillStyle = pal.pat; ctx.lineWidth = 2.5; ctx.globalAlpha = 0.28;
+      PATTERNS[SUKU_PATTERN[id] || "diamond"](ctx, W, H, 48);
+      ctx.restore();
+    });
+  }
+  /* deretan ikon di bagian atas, berjarak rata */
+  const items = [];
+  sel.forEach((s) => {
+    const c = pal.dots[ELS.findIndex((e) => e.k === s.k)];
+    if (s.k === "suku") s.ids.forEach((id) => items.push([s, id, c]));
+    else items.push([s, s.id, c]);
+  });
+  const step = Math.min(124, (W - 120) / items.length);
+  const r = Math.min(44, step / 2 - 8);
+  items.forEach((it, i) => medallion(ctx, it[0], it[1], W / 2 + (i - (items.length - 1) / 2) * step, 96, r, pal, it[2]));
+}
+
+function drawBackground(ctx, W, H, pal, src) {
+  bgBase(ctx, W, H, pal);
+  const sel = selections();
+  if (src === "campuran") {
+    bgCampuran(ctx, W, H, pal, sel);
+    return;
+  }
+  const get = (k) => sel.find((s) => s.k === k);
+  const mix = src === "campuran";
+  const st = mix ? { suku: 0.8, zodiak: 0.9, shio: 0.6, darah: 0.6, mbti: 0.6 } : { suku: 1, zodiak: 1, shio: 1, darah: 1, mbti: 1 };
+  const layers = mix ? ["suku", "shio", "darah", "mbti", "zodiak"] : [src];
+  layers.forEach((k) => {
+    const s = get(k);
+    if (!s) return;
+    const a = st[k];
+    if (k === "suku") {
+      const n = s.ids.length;
+      s.ids.forEach((id, i) => bgSukuPattern(ctx, W, H, pal, a, id, (H * i) / n, (H * (i + 1)) / n));
+    } else if (k === "zodiak") bgZodiak(ctx, W, H, pal, a, s.id);
+    else if (k === "shio") bgShio(ctx, W, H, pal, a, s.id);
+    else if (k === "darah") bgDarah(ctx, W, H, pal, a, s.value);
+    else if (k === "mbti") bgMbti(ctx, W, H, pal, a, s.value);
+  });
+  const v = ctx.createLinearGradient(0, H * 0.6, 0, H);
+  v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, pal.light ? "rgba(21,29,46,0.06)" : "rgba(0,0,0,0.22)");
+  ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+}
+
+/* isi kartu */
+/* Tepat 3 poin per bagian. My Common Thread: 2 poin teratas + sisanya digabung jadi "Plus ...".
+   Where Things Get Complicated: 2 poin teratas + bumbu "Kurangnya" dari tiap elemen. */
+function cardData(sel) {
+  const c = synResult(synValues(), S.suku).card;
+  const bm = c.bm.length <= 3 ? c.bm : [c.bm[0], c.bm[1], "Plus " + jd(c.bm.slice(2, 5).map(lowFirst))];
+  const main = c.ribet.slice(0, 2);
+  const khas = c.khas.filter((k) => main.indexOf(k) < 0);
+  while (main.length < 2 && khas.length) { const k = khas.shift(); main.push(k.charAt(0).toUpperCase() + k.slice(1)); }
+  const spice = khas.slice(0, 3);
+  const troubles = spice.length ? main.concat(["Plus " + jd(spice)]) : main;
+  return {
+    rows: sel.filter((s) => !S.hide[s.k]).map((s) => ({ k: s.k, label: EL_FULL[s.k], value: s.value })),
+    patterns: bm,
+    troubles: troubles
+  };
+}
+
+/* Urutan kartu: elemen (bisa disembunyikan), My Common Thread, lalu Where Things Get Complicated.
+   Mengembalikan tinggi total agar tumpukan bisa diletakkan di tengah. */
+function composeCard(ctx, W, D, pal, s, top, dry) {
+  const M = 80;
+  const gap = 26 * s, pad = 36 * s;
+  const F = (wt, px) => Math.min(wt, 700) + " " + Math.round(px * s) + 'px "DM Sans",system-ui,sans-serif';
+  const G = (wt, px) => wt + " " + Math.round(px * s) + 'px "Cormorant Garamond",Georgia,serif';
+  const B = (px) => "400 " + Math.round(px * s) + 'px "DM Sans",system-ui,sans-serif';
+  let drawing = false;
+  ctx.textBaseline = "top"; ctx.textAlign = "left";
+
+  function para(text, x, y, w, font, color, lh) {
+    ctx.font = font;
+    const ls = wrap(ctx, text, w);
+    const L = lh * s;
+    if (drawing) { ctx.fillStyle = color; ls.forEach((l, i) => ctx.fillText(l, x, y + i * L)); }
+    return ls.length * L;
+  }
+  function block(x, y, w, fn) {
+    drawing = false;
+    const h = fn(x + pad, y + pad, w - 2 * pad);
+    if (!dry) {
+      ctx.fillStyle = pal.scrim; rr(ctx, x, y, w, h + 2 * pad, 28 * s); ctx.fill();
+      drawing = true; fn(x + pad, y + pad, w - 2 * pad); drawing = false;
+    }
+    return h + 2 * pad;
+  }
+  function label(x, y, w) {
+    if (!dry) {
+      drawing = true;
+      try { ctx.letterSpacing = Math.round(10 * s) + "px"; } catch (e) {}
+      para("SYNARA", x, y, w, G(600, 44), pal.accent, 50);
+      try { ctx.letterSpacing = "0px"; } catch (e) {}
+      drawing = false;
+    }
+    return 64 * s;
+  }
+  const profile = (x, y, w) => {
+    let h = 0;
+    D.rows.forEach((r, i) => {
+      if (i) h += 14 * s;
+      const t = h;
+      h += para(r.label, x + 32 * s, y + h, w - 32 * s, F(600, 24), pal.muted, 30);
+      h += para(r.value, x + 32 * s, y + h, w - 32 * s, F(700, 38), pal.ink, 48);
+      if (drawing) { ctx.fillStyle = pal.dots[ELS.findIndex((e) => e.k === r.k)]; ctx.beginPath(); ctx.arc(x + 9 * s, y + t + 14 * s, 9 * s, 0, Math.PI * 2); ctx.fill(); }
+    });
+    return h;
+  };
+  /* judul dan poin memakai ukuran yang sama di kedua bagian */
+  const section = (title, items) => (x, y, w) => {
+    let h = para(title, x, y, w, F(700, 34), pal.accent, 44) + 10 * s;
+    items.forEach((it, i) => {
+      if (i) h += 8 * s;
+      if (drawing) { ctx.font = B(30); ctx.fillStyle = pal.ink; ctx.fillText("\u2022", x, y + h); }
+      h += para(it, x + 30 * s, y + h, w - 30 * s, B(30), pal.ink, 42);
+    });
+    return h;
+  };
+
+  let y = top;
+  y += label(M, y, W - 2 * M);
+  if (D.rows.length) y += block(M, y, W - 2 * M, profile) + gap;
+  y += block(M, y, W - 2 * M, section("My Common Thread", D.patterns)) + gap;
+  y += block(M, y, W - 2 * M, section("Where Things Get Complicated", D.troubles));
+  return y - top;
+}
+
+function footerText() {
+  return ["Five Elements. One You.", "by Synara"];
+}
+
+let drawQueued = false;
+function queueDraw() {
+  if (drawQueued) return;
+  drawQueued = true;
+  requestAnimationFrame(() => { drawQueued = false; drawCard(); });
+}
+
+function drawCard() {
+  const sel = selections();
+  if (!sel.length) return;
+  const c = $("#card");
+  const portrait = true;
+  const W = 1080, H = 1920;
+  if (c.width !== W || c.height !== H) { c.width = W; c.height = H; }
+  const ctx = c.getContext("2d");
+  const pal = PALETTES[S.pal] || PALETTES.midnight;
+  ctx.clearRect(0, 0, W, H);
+  drawBackground(ctx, W, H, pal, S.bg);
+  const D = cardData(sel);
+  /* ruang di antara deretan ikon (atas) dan tulisan footer (bawah); isi diletakkan di tengahnya */
+  const TOP = 170, BOTTOM = H - 190, room = BOTTOM - TOP;
+  let s = 1, h = composeCard(ctx, W, D, pal, s, 0, true);
+  while (h > room && s > 0.6) { s -= 0.04; h = composeCard(ctx, W, D, pal, s, 0, true); }
+  composeCard(ctx, W, D, pal, s, TOP + Math.max(0, (room - h) / 2), false);
+  ctx.textBaseline = "alphabetic"; ctx.textAlign = portrait ? "center" : "left";
+  ctx.font = '500 28px "DM Sans",system-ui,sans-serif';
+  ctx.fillStyle = pal.muted;
+  const ft = footerText();
+  ctx.fillText(ft[0], W / 2, H - 140);
+  ctx.font = '400 24px "DM Sans",system-ui,sans-serif';
+  ctx.fillText(ft[1], W / 2, H - 98);
+}
+
+function loadFonts() {
+  if (!document.fonts || !document.fonts.load) return;
+  Promise.all([
+    document.fonts.load('600 60px "Cormorant Garamond"'),
+    document.fonts.load('600 30px "DM Sans"'),
+    document.fonts.load('400 30px "DM Sans"'),
+    document.fonts.load('700 30px "DM Sans"')
+  ]).then(() => { if (cur === LAST) queueDraw(); }, () => {});
+}
+
+/* unduh dan bagikan */
+function cardBlob(cb) { $("#card").toBlob(cb, "image/png"); }
+/* Nama file unduhan: <nama>_by_Synara.png (karakter yang tidak boleh ada di nama file dibuang). */
+function baseName() {
+  const nama = C.nama.trim().replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").trim();
+  return (nama || "Peserta") + "_by_Synara";
+}
+function fileName() { return baseName() + ".png"; }
+
+/* ---------- unduh PDF hasil lengkap ---------- */
+const PDF_LIBS = [
+  "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+];
+const PDF_H = 1123, PDF_ROOM = 1123 - 56 - 70; /* tinggi isi per halaman (tanpa footer) */
+
+function loadScript(src) {
+  return new Promise((ok, fail) => {
+    if (document.querySelector('script[src="' + src + '"]')) return ok();
+    const el = document.createElement("script");
+    el.src = src; el.onload = ok; el.onerror = () => fail(new Error(src));
+    document.head.appendChild(el);
+  });
+}
+
+/* Susun isi slide Hasil menjadi halaman A4; tiap kartu utuh, judul bagian tidak terpisah dari isinya. */
+function buildPdfPages() {
+  renderSlides();
+  const root = document.createElement("div");
+  root.className = "pdf-root";
+  document.body.appendChild(root);
+
+  const groups = [];
+  const head = document.createElement("div");
+  head.className = "pdf-head";
+  const tgl = new Date().toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+  head.innerHTML = '<p class="pdf-brand">SYNARA</p><p class="pdf-tag">Discover the patterns within.</p>' +
+    '<p class="pdf-for">' + esc(unlockedTitle()) + "</p>" +
+    '<p class="pdf-meta">' + selections().map((x) => esc(x.value)).join(" \u00B7 ") + " \u00B7 " + tgl + "</p>";
+  groups.push(head);
+  const hint = document.querySelector("#s2 .hint");
+  if (hint) groups.push(hint.cloneNode(true));
+
+  document.querySelectorAll("#s2 .block").forEach((blk) => {
+    let pending = document.createElement("div");
+    pending.className = "pdf-sec";
+    const push = (el) => {
+      if (pending) { pending.appendChild(el); groups.push(pending); pending = null; } else groups.push(el);
+    };
+    Array.from(blk.children).forEach((ch) => {
+      if (ch.classList.contains("kicker") || ch.tagName === "H3") { if (pending) pending.appendChild(ch.cloneNode(true)); return; }
+      if (ch.tagName === "UL") {
+        Array.from(ch.children).forEach((li) => {
+          const ul = document.createElement("ul");
+          ul.className = ch.className;
+          if (ch.getAttribute("style")) ul.setAttribute("style", ch.getAttribute("style"));
+          ul.appendChild(li.cloneNode(true));
+          push(ul);
+        });
+      } else push(ch.cloneNode(true));
+    });
+  });
+
+  const newPage = () => {
+    const pg = document.createElement("div");
+    pg.className = "pdf-page";
+    const body = document.createElement("div");
+    pg.appendChild(body);
+    root.appendChild(pg);
+    return body;
+  };
+  let body = newPage();
+  groups.forEach((g) => {
+    body.appendChild(g);
+    if (body.offsetHeight > PDF_ROOM && body.children.length > 1) {
+      body.removeChild(g);
+      body = newPage();
+      body.appendChild(g);
+    }
+  });
+  const pages = root.querySelectorAll(".pdf-page");
+  pages.forEach((pg, i) => {
+    const f = document.createElement("div");
+    f.className = "pdf-foot";
+    f.innerHTML = "<span><b>SYNARA</b> \u00B7 Five Elements. One You.</span><span>" + (i + 1) + " / " + pages.length + "</span>";
+    pg.appendChild(f);
+  });
+  return root;
+}
+
+async function downloadPdf() {
+  const btn = $("#pdf");
+  if (btn.disabled) return;
+  const t = btn.querySelector(".t"), label = t.textContent;
+  btn.disabled = true; t.textContent = "Preparing your report...";
+  let root = null;
+  try {
+    await Promise.all(PDF_LIBS.map(loadScript));
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    root = buildPdfPages();
+    const doc = new window.jspdf.jsPDF({ unit: "pt", format: "a4" });
+    const pages = root.querySelectorAll(".pdf-page");
+    for (let i = 0; i < pages.length; i++) {
+      const cv = await window.html2canvas(pages[i], { scale: 2, backgroundColor: "#F6F2EA", logging: false });
+      if (i) doc.addPage();
+      doc.addImage(cv.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 595.28, 841.89);
+    }
+    doc.save(baseName() + ".pdf");
+    toast("Beres! PDF hasil lengkap sudah tersimpan.");
+  } catch (e) {
+    toast("Yah, PDF-nya gagal dibuat. Cek koneksi internet, lalu coba lagi.");
+  } finally {
+    if (root) root.remove();
+    btn.disabled = false; t.textContent = label;
+  }
+}
+
+function toast(t) { $("#toast").textContent = t; }
+
+/* ---------- catat ke Google Sheet lewat Apps Script ---------- */
+/* Tempel URL Web App dari Apps Script di sini (lihat README). */
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4MDe_frwrWtxTr5qaoCx8NAnFDIZwXAJE40Dowbj7VcbBIQSZZ3aU_4oipAUPFU4y/exec";
+let lastLogged = "";
+let sendQueue = Promise.resolve();
+const SID = (() => {
+  try { if (crypto.randomUUID) return crypto.randomUUID(); } catch (e) {}
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+})();
+
+function logToSheet() {
+  if (!APPS_SCRIPT_URL) return;
+  const sel = selections();
+  const val = (k) => { const x = sel.find((e) => e.k === k); return x ? x.value : ""; };
+  const data = {
+    nama: C.nama.trim(),
+    tanggalLahir: $("#tgl").value,
+    darah: val("darah"), mbti: val("mbti"), zodiak: val("zodiak"), shio: val("shio"), suku: val("suku"),
+    benangMerah: synResult(synValues(), S.suku).bmList.slice(0, 3).join(" \u00B7 "), /* 3 teratas agar muat di batas 300 karakter per sel */
+    penilaian: R.sent ? RATINGS.find((r) => r.v === R.choice).t : "",
+    id: SID
+  };
+  const body = JSON.stringify(data);
+  if (body === lastLogged) return; /* jangan kirim ulang data yang sama */
+  lastLogged = body;
+  /* Kiriman diantre: yang berikutnya baru dikirim setelah yang sebelumnya selesai,
+     supaya data tanpa penilaian tidak menimpa data yang sudah berisi penilaian.
+     text/plain dan no-cors: tidak memicu preflight, dan pengunjung tidak perlu menunggu. */
+  sendQueue = sendQueue.then(() => fetch(APPS_SCRIPT_URL, { method: "POST", mode: "no-cors", keepalive: true, body: body })
+    .catch(() => { if (lastLogged === body) lastLogged = ""; }));
+}
+
+/* ---------- peristiwa ---------- */
+document.addEventListener("click", (ev) => {
+  const go = ev.target.closest("[data-go]");
+  if (go) { goTo(parseInt(go.dataset.go, 10)); return; }
+  const sh = ev.target.closest("[data-share]");
+  if (sh) {
+    const k = sh.dataset.share, v = sh.dataset.v;
+    if (k === "pal") S.pal = v; else if (k === "bg") S.bg = v; else if (k === "hide") S.hide[v] = !S.hide[v];
+    buildShareControls(); queueDraw();
+    return;
+  }
+  const b = ev.target.closest("[data-act]");
+  if (!b) return;
+  const act = b.dataset.act, v = b.dataset.v;
+  if (act === "darah") S.darah = S.darah === v ? "" : v;
+  else if (act === "mbti") S[b.dataset.k] = S[b.dataset.k] === v ? "" : v;
+  else if (act === "suku") {
+    const i = S.suku.indexOf(v);
+    if (i > -1) S.suku.splice(i, 1);
+    else if (S.suku.length < MAX_SUKU) S.suku.push(v);
+    else { $("#sukuHint").textContent = "You can select up to " + MAX_SUKU + ". Deselect one to swap it out."; return; }
+    $("#sukuHint").textContent = "Mixed heritage? You can select up to 3.";
+  }
+  update();
+});
+
+$("#nama").addEventListener("input", (e) => {
+  C.nama = e.target.value;
+  e.target.removeAttribute("aria-invalid");
+  const hint = $("#contactHint");
+  if (hint.classList.contains("err")) { hint.classList.remove("err"); hint.textContent = ""; }
+});
+document.addEventListener("change", (e) => {
+  if (e.target.name !== "rate") return;
+  R.choice = e.target.value;
+  R.sent = true;
+  logToSheet();
+  goTo(LAST);
+});
+["input", "change"].forEach((ev) => $("#tgl").addEventListener(ev, (e) => { setBirth(e.target.value); update(); }));
+$("#reset").addEventListener("click", () => {
+  S = { ei: "", ns: "", ft: "", jp: "", darah: "", zodiak: "", shio: "", suku: [], pal: "midnight", bg: "campuran", hide: {} };
+  $("#tgl").value = "";
+  update();
+});
+$("#prev").addEventListener("click", () => goTo(cur - 1));
+$("#next").addEventListener("click", () => goTo(cur === LAST ? 1 : cur + 1));
+$("#contactForm").addEventListener("submit", (e) => { e.preventDefault(); goTo(1); });
+document.addEventListener("keydown", (e) => {
+  const t = e.target && e.target.tagName;
+  if (t === "INPUT" || t === "SELECT" || t === "TEXTAREA") return;
+  if (e.key === "ArrowRight" && cur < LAST) goTo(cur + 1);
+  else if (e.key === "ArrowLeft" && cur > 0) goTo(cur - 1);
+});
+
+$("#pdf").addEventListener("click", downloadPdf);
+$("#dl").addEventListener("click", () => {
+  drawCard();
+  cardBlob((blob) => {
+    if (!blob) { toast("Yah, gambarnya gagal dibuat. Coba sekali lagi, ya."); return; }
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = fileName();
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    toast("Beres! Kartu hasil sudah tersimpan.");
+  });
+});
+
+/* ---------- mulai ---------- */
+buildForm();
+update();
+goTo(0, false);
+loadFonts();
+</script>
+</body>
+</html>
